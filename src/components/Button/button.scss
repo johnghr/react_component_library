@@ -1,0 +1,32 @@
+@import '../../color-variables.scss';
+
+.button {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    border: 0;
+    border-radius: 3em;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+}
+.button--primary {
+    color: $light-on-primary;
+    background-color: $light-primary;
+}
+.button--secondary {
+    color: $light-on-secondary;
+    background-color: $light-secondary;
+}
+
+.button--small {
+    font-size: 12px;
+    padding: 10px 16px;
+}
+.button--medium {
+    font-size: 14px;
+    padding: 11px 20px;
+}
+.button--large {
+    font-size: 16px;
+    padding: 12px 24px;
+}
