@@ -10,7 +10,7 @@ export interface ButtonProps {
     onClick?: () => void;
 }
 
-export const Button = ({ color, disabled, size = 'medium', text, type, onClick }: ButtonProps) => {
-    const className = ['button', `button--${color}`, `button--${size}`].join(' ');
+export const Button = ({ color, disabled, size = 'medium', text, type, variant, onClick }: ButtonProps) => {
+    const className = ['button', `button--${color}`, `button--${size}`, `button--${variant}`].join(' ');
     return <button {...{ className, disabled, type, onClick }}>{text}</button>;
 };
