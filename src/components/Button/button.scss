@@ -1,5 +1,7 @@
 @import '../../color-variables.scss';
 
+$hover-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+
 .button {
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
@@ -12,13 +14,35 @@
 .button--primary {
     color: $light-on-primary;
     background-color: $light-primary;
-    &:hover {
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    &:hover:enabled {
+        box-shadow: $hover-box-shadow;
+    }
+    &:disabled {
+        color: $light-on-surface;
+        background-color: $light-surface;
     }
 }
 .button--secondary {
     color: $light-on-secondary;
     background-color: $light-secondary;
+    &:hover:enabled {
+        box-shadow: $hover-box-shadow;
+    }
+    &:disabled {
+        color: $light-on-surface;
+        background-color: $light-surface;
+    }
+}
+.button--tertiary {
+    color: $light-on-tertiary;
+    background-color: $light-tertiary;
+    &:hover:enabled {
+        box-shadow: $hover-box-shadow;
+    }
+    &:disabled {
+        color: $light-on-surface;
+        background-color: $light-surface;
+    }
 }
 
 .button--small {
