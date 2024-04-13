@@ -8,10 +8,10 @@ import React from 'react';
 
 // Define test props
 const testProps: ButtonProps = {
-    color: 'primary',
+    color: 'secondary',
     text: 'Click me',
     type: 'button',
-    variant: 'filled'
+    variant: 'outlined'
     // onClick: mockOnClick
 };
 
@@ -34,7 +34,7 @@ describe('Button component', () => {
         expect(buttonElement.textContent).toBe('Click me');
 
         // Check if button has the correct color class
-        expect(buttonElement.className).toContain('button--primary');
+        expect(buttonElement.className).toContain('button--secondary');
 
         // Check if button is enabled
         expect(buttonElement.disabled).toBe(false);
