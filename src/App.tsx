@@ -1,7 +1,18 @@
-import './App.scss';
+import { Button } from './components/Button/Button';
+import './App.css';
 
 function App() {
-    return <div className="test-class">Probably not gunna need this and just export components here</div>;
+    return (
+        <Button
+            {...{
+                color: 'primary',
+                disabled: false,
+                text: 'Label',
+                type: 'button',
+                variant: 'filled'
+            }}
+        />
+    );
 }
 
 export default App;

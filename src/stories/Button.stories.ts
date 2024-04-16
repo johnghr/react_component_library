@@ -34,6 +34,34 @@ export const Primary: Story = {
     }
 };
 
+export const PrimaryFilledActive: Story = {
+    args: {
+        color: 'primary',
+        disabled: false,
+        text: 'Label',
+        type: 'button',
+        variant: 'filled'
+    },
+    parameters: {
+        // Toggles the component hover state via parameter.
+        pseudo: { active: true }
+    }
+};
+
+export const PrimaryFilledFocused: Story = {
+    args: {
+        color: 'primary',
+        disabled: false,
+        text: 'Label',
+        type: 'button',
+        variant: 'filled'
+    },
+    parameters: {
+        // Toggles the component hover state via parameter.
+        pseudo: { focus: true }
+    }
+};
+
 export const Secondary: Story = {
     args: {
         color: 'secondary',
