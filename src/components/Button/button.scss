@@ -1,5 +1,3 @@
-@import '../../color-variables.scss';
-
 :root {
     --button-radius: 1.25rem;
 }
@@ -17,27 +15,13 @@
 
 .button--filled {
     position: relative;
-    &:hover:enabled {
-        box-shadow: var(--elevation-level-one);
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.08);
-            border-radius: var(--button-radius);
-        }
-    }
-
     &:disabled {
-        color: rgb($color-on-surface);
-        background-color: rgb($color-surface);
+        color: rgb(var(--color-on-surface));
+        background-color: rgb(var(--color-surface));
     }
     &.button--primary {
-        color: rgb($color-on-primary);
-        background-color: rgb($color-primary);
+        color: rgb(var(--color-on-primary));
+        background-color: rgb(var(--color-primary));
         &:focus,
         &:active {
             &::before {
@@ -49,48 +33,61 @@
                 height: 100%;
                 background-color: rgba(255, 255, 255, 0.1);
                 border-radius: var(--button-radius);
-                outline: solid 3px var($color-secondary);
-                outline-offset: 2px;
             }
         }
         &:focus {
-            outline: solid 3px rgb($color-secondary);
+            outline: solid 3px rgb(var(--color-secondary));
             outline-offset: 2px;
+        }
+        &:hover:enabled {
+            box-shadow:
+                0 1px 2px 0 rgba(var(--color-shadow) 0.3),
+                0 1px 3px 1px rgba(var(--color-shadow) 0.15);
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.08);
+                border-radius: var(--button-radius);
+            }
         }
     }
     &.button--secondary {
-        color: rgb($color-on-secondary);
-        background-color: rgb($color-secondary);
+        color: rgb(var(--color-on-secondary));
+        background-color: rgb(var(--color-secondary));
     }
     &.button--tertiary {
-        color: rgb($color-on-tertiary);
-        background-color: rgb($color-tertiary);
+        color: rgb(var(--color-on-tertiary));
+        background-color: rgb(var(--color-tertiary));
     }
 }
 
 .button--outlined {
-    border: solid 1px rgb($color-outline);
+    border: solid 1px rgb(var(--color-outline));
     background-color: rgba(0, 0, 0, 0);
     &:disabled {
-        color: rgb($color-on-surface);
-        background-color: rgb($color-surface);
+        color: rgb(var(--color-on-surface));
+        background-color: rgb(var(--color-surface));
     }
     &.button--primary {
-        color: rgb($color-primary);
+        color: rgb(var(--color-primary));
         &:hover:enabled {
-            background-color: rgb($color-primary), 0.08;
+            background-color: rgb(var(--color-primary), 0.08);
         }
     }
     &.button--secondary {
-        color: rgb($color-secondary);
+        color: rgb(var(--color-secondary));
         &:hover:enabled {
-            background-color: rgb($color-secondary), 0.08;
+            background-color: rgb(var(--color-secondary), 0.08);
         }
     }
     &.button--tertiary {
-        color: rgb($color-tertiary);
+        color: rgb(var(--color-tertiary));
         &:hover:enabled {
-            background-color: rgb($color-tertiary), 0.08;
+            background-color: rgb(var(--color-tertiary), 0.08);
         }
     }
 }
@@ -98,10 +95,10 @@
 .button--elevated {
     box-shadow: var(--elevation-level-one);
     &.button--primary {
-        background-color: rgb($color-surface-container-low);
-        color: rgb($color-primary);
+        background-color: rgb(var(--color-surface-container-low));
+        color: rgb(var(--color-primary));
         &:hover:enabled {
-            background-color: rgb($color-primary), 0.08;
+            background-color: rgb(var(--color-primary), 0.08);
         }
     }
 }

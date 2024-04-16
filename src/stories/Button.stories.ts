@@ -34,6 +34,20 @@ export const Primary: Story = {
     }
 };
 
+export const PrimaryFilledHovered: Story = {
+    args: {
+        color: 'primary',
+        disabled: false,
+        text: 'Label',
+        type: 'button',
+        variant: 'filled'
+    },
+    parameters: {
+        // Toggles the component hover state via parameter.
+        pseudo: { hover: true }
+    }
+};
+
 export const PrimaryFilledActive: Story = {
     args: {
         color: 'primary',
