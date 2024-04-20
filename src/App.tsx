@@ -6,7 +6,7 @@ function App() {
         <Button
             {...{
                 color: 'primary',
-                disabled: false,
+                disabled: true,
                 text: 'Label',
                 type: 'button',
                 variant: 'filled'

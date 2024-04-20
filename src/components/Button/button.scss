@@ -3,6 +3,7 @@
 }
 
 .button {
+    position: relative;
     height: 2.5rem;
     border: none;
     border-radius: var(--button-radius);
@@ -15,15 +16,11 @@
 
 .button--filled {
     position: relative;
-    &:disabled {
-        color: rgb(var(--color-on-surface));
-        background-color: rgb(var(--color-surface));
-    }
     &.button--primary {
         color: rgb(var(--color-on-primary));
         background-color: rgb(var(--color-primary));
-        &:focus,
-        &:active {
+        &:focus:enabled,
+        &:active:enabled {
             &::before {
                 content: '';
                 position: absolute;
@@ -35,7 +32,7 @@
                 border-radius: var(--button-radius);
             }
         }
-        &:focus {
+        &:focus:enabled {
             outline: solid 3px rgb(var(--color-secondary));
             outline-offset: 2px;
         }
@@ -52,40 +49,10 @@
                 border-radius: var(--button-radius);
             }
         }
-    }
-    &.button--secondary {
-        color: rgb(var(--color-on-secondary));
-        background-color: rgb(var(--color-secondary));
-    }
-    &.button--tertiary {
-        color: rgb(var(--color-on-tertiary));
-        background-color: rgb(var(--color-tertiary));
-    }
-}
-
-.button--outlined {
-    border: solid 1px rgb(var(--color-outline));
-    background-color: rgba(0, 0, 0, 0);
-    &:disabled {
-        color: rgb(var(--color-on-surface));
-        background-color: rgb(var(--color-surface));
-    }
-    &.button--primary {
-        color: rgb(var(--color-primary));
-        &:hover:enabled {
-            background-color: rgb(var(--color-primary), 0.08);
-        }
-    }
-    &.button--secondary {
-        color: rgb(var(--color-secondary));
-        &:hover:enabled {
-            background-color: rgb(var(--color-secondary), 0.08);
-        }
-    }
-    &.button--tertiary {
-        color: rgb(var(--color-tertiary));
-        &:hover:enabled {
-            background-color: rgb(var(--color-tertiary), 0.08);
+        &:disabled {
+            color: rgba(var(--color-on-surface), 0.38);
+            background-color: rgba(var(--color-on-surface), 0.12);
+            cursor: default;
         }
     }
 }
@@ -96,20 +63,56 @@
         background-color: rgb(var(--color-surface-container-low));
         color: rgb(var(--color-primary));
         &:hover:enabled {
+            color: rgb(var(--color-primary));
+            box-shadow: var(--elevation-level-two);
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(var(--color-primary), 0.08);
+                border-radius: var(--button-radius);
+            }
+        }
+        &:focus:enabled {
+            outline: solid 3px rgb(var(--color-secondary));
+            outline-offset: 2px;
+        }
+        &:active:enabled,
+        &:focus:enabled {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(var(--color-primary), 0.1);
+                border-radius: var(--button-radius);
+            }
+        }
+    }
+    &:disabled {
+        color: rgba(var(--color-on-surface), 0.38);
+        background-color: rgba(var(--color-on-surface), 0.12);
+        cursor: default;
+        box-shadow: none;
+    }
+}
+
+.button--outlined {
+    border: solid 1px rgb(var(--color-outline));
+    background-color: rgba(0, 0, 0, 0);
+    &:disabled {
+        color: rgba(var(--color-on-surface));
+        background-color: rgba(var(--color-surface));
+    }
+    &.button--primary {
+        color: rgb(var(--color-primary));
+        &:hover:enabled {
             background-color: rgb(var(--color-primary), 0.08);
         }
     }
 }
-
-// .button--small {
-//     font-size: 12px;
-//     padding: 10px 16px;
-// }
-// .button--medium {
-//     font-size: 14px;
-//     padding: 11px 20px;
-// }
-// .button--large {
-//     font-size: 16px;
-//     padding: 12px 24px;
-// }

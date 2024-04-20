@@ -8,6 +8,14 @@ const preview: Preview = {
                 color: /(background|color)$/i,
                 date: /Date$/i
             }
+        },
+        backgrounds: {
+            values: [
+                {
+                    name: 'Material Design Light',
+                    value: '#FEF7FF'
+                }
+            ]
         }
     }
 };

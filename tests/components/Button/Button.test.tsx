@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Button, ButtonProps } from '../../../src/components/Button/Button';
 import { describe, expect, it } from 'vitest';
-import React from 'react';
+import React, { createRef } from 'react';
 
 // Mock the onClick function
 // const mockOnClick = jest.fn();
@@ -59,5 +59,15 @@ describe('Button component', () => {
         screen.debug();
         const buttonElement = getByText('Click me') as HTMLButtonElement;
         expect(buttonElement.className).toContain('button--large');
+    });
+
+    it('forwards the ref to the button element', () => {
+        const ref = createRef<HTMLButtonElement>();
+
+        render(<Button {...testProps} ref={ref} />);
+
+        const buttonElement = ref.current;
+
+        expect(buttonElement).toBeInstanceOf(HTMLButtonElement);
     });
 });
