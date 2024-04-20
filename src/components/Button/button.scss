@@ -12,6 +12,10 @@
     text-align: center;
     line-height: 1.6667rem;
     font-size: 1.1667rem;
+    font-weight: 500;
+    &:disabled {
+        cursor: default;
+    }
 }
 
 .button--filled {
@@ -52,7 +56,6 @@
         &:disabled {
             color: rgba(var(--color-on-surface), 0.38);
             background-color: rgba(var(--color-on-surface), 0.12);
-            cursor: default;
         }
     }
 }
@@ -97,19 +100,18 @@
     &:disabled {
         color: rgba(var(--color-on-surface), 0.38);
         background-color: rgba(var(--color-on-surface), 0.12);
-        cursor: default;
         box-shadow: none;
     }
 }
 
 .button--outlined {
-    border: solid 1px rgb(var(--color-outline));
-    background-color: rgba(0, 0, 0, 0);
-    &:disabled {
-        color: rgba(var(--color-on-surface));
-        background-color: rgba(var(--color-surface));
-    }
     &.button--primary {
+        outline: solid 1px rgb(var(--color-outline));
+        background-color: rgba(0, 0, 0, 0);
+        &:disabled {
+            color: rgba(var(--color-on-surface), 0.38);
+            outline: solid 1px rgb(var(--color-on-surface), 0.12);
+        }
         color: rgb(var(--color-primary));
         &:hover:enabled {
             background-color: rgb(var(--color-primary), 0.08);

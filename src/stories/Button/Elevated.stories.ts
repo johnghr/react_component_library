@@ -9,9 +9,7 @@ const meta = {
         layout: 'centered'
     },
     tags: ['autodocs'],
-    argTypes: {
-        color: { control: 'radio', options: ['primary', 'secondary', 'tertiary'] }
-    },
+
     args: { onClick: fn() }
 } satisfies Meta<typeof Button>;
 
