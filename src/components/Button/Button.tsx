@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import './button.scss';
 
 export interface ButtonProps {
@@ -10,7 +11,12 @@ export interface ButtonProps {
     onClick?: () => void;
 }
 
-export const Button = ({ color, disabled, size = 'medium', text, type, variant, onClick }: ButtonProps) => {
-    const className = ['button', `button--${color}`, `button--${size}`, `button--${variant}`].join(' ');
-    return <button {...{ className, disabled, type, onClick }}>{text}</button>;
-};
+export const Button = forwardRef(
+    (
+        { color, disabled, size = 'medium', text, type, variant, onClick }: ButtonProps,
+        ref: React.ForwardedRef<HTMLButtonElement>
+    ) => {
+        const className = ['button', `button--${color}`, `button--${size}`, `button--${variant}`].join(' ');
+        return <button {...{ className, disabled, ref, type, onClick }}>{text}</button>;
+    }
+);

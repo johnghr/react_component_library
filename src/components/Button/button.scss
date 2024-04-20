@@ -40,9 +40,7 @@
             outline-offset: 2px;
         }
         &:hover:enabled {
-            box-shadow:
-                0 1px 2px 0 rgba(var(--color-shadow) 0.3),
-                0 1px 3px 1px rgba(var(--color-shadow) 0.15);
+            box-shadow: var(--elevation-level-one);
             &::before {
                 content: '';
                 position: absolute;
