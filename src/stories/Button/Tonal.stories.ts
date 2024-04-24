@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import { Button } from '../../components/Button/Button';
 
 const meta = {
-    title: 'Button/Eleveated',
+    title: 'Button/Tonal',
     component: Button,
     parameters: {
         layout: 'centered'
@@ -15,61 +15,61 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Eleveated: Story = {
+export const Tonal: Story = {
     args: {
         color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'tonal'
     }
 };
 
-export const EleveatedHovered: Story = {
+export const TonalHovered: Story = {
     args: {
         color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'tonal'
     },
     parameters: {
         pseudo: { hover: true }
     }
 };
 
-export const EleveatedActive: Story = {
+export const TonalActive: Story = {
     args: {
         color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'tonal'
     },
     parameters: {
         pseudo: { active: true }
     }
 };
 
-export const EleveatedFocused: Story = {
+export const TonalFocused: Story = {
     args: {
         color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'tonal'
     },
     parameters: {
         pseudo: { focus: true }
     }
 };
 
-export const EleveatedDisabled: Story = {
+export const TonalDisabled: Story = {
     args: {
         color: 'primary',
         disabled: true,
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'tonal'
     }
 };

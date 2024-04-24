@@ -1,12 +1,41 @@
-:root {
-    --button-radius: 1.25rem;
+@import '../../scss/color.scss';
+
+$radius: 1.25rem;
+$focused-and-pressed-state-layer-opacity: 0.1;
+$hovered-state-layer-opacity: 0.08;
+$disabled-container-opacity: 0.12;
+$disabled-label-opacity: 0.38;
+
+@mixin label-and-container-color($label-color, $label-opacity: 1, $container-color, $container-opacity: 1) {
+    color: rgba($label-color, $label-opacity);
+    background-color: rgba($container-color, $container-opacity);
+}
+
+@mixin state-layer($color, $opacity) {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color, $opacity);
+        border-radius: $radius;
+    }
+}
+
+@mixin focus-indicator {
+    &:focus:enabled {
+        outline: solid 3px $color-secondary;
+        outline-offset: 2px;
+    }
 }
 
 .button {
     position: relative;
     height: 2.5rem;
     border: none;
-    border-radius: var(--button-radius);
+    border-radius: $radius;
     cursor: pointer;
     padding: 0 1.5rem;
     text-align: center;
@@ -21,41 +50,18 @@
 .button--filled {
     position: relative;
     &.button--primary {
-        color: rgb(var(--color-on-primary));
-        background-color: rgb(var(--color-primary));
-        &:focus:enabled,
-        &:active:enabled {
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: var(--button-radius);
-            }
-        }
+        @include label-and-container-color($label-color: $color-on-primary, $container-color: $color-primary);
+        &:active:enabled,
         &:focus:enabled {
-            outline: solid 3px rgb(var(--color-secondary));
-            outline-offset: 2px;
+            @include state-layer($color-on-primary, $focused-and-pressed-state-layer-opacity);
         }
+        @include focus-indicator;
         &:hover:enabled {
             box-shadow: var(--elevation-level-one);
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(255, 255, 255, 0.08);
-                border-radius: var(--button-radius);
-            }
+            @include state-layer($color-on-primary, $hovered-state-layer-opacity);
         }
         &:disabled {
-            color: rgba(var(--color-on-surface), 0.38);
-            background-color: rgba(var(--color-on-surface), 0.12);
+            @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
         }
     }
 }
@@ -63,58 +69,73 @@
 .button--elevated {
     box-shadow: var(--elevation-level-one);
     &.button--primary {
-        background-color: rgb(var(--color-surface-container-low));
-        color: rgb(var(--color-primary));
-        &:hover:enabled {
-            color: rgb(var(--color-primary));
-            box-shadow: var(--elevation-level-two);
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(var(--color-primary), 0.08);
-                border-radius: var(--button-radius);
-            }
-        }
-        &:focus:enabled {
-            outline: solid 3px rgb(var(--color-secondary));
-            outline-offset: 2px;
-        }
+        @include label-and-container-color($label-color: $color-primary, $container-color: $color-surface-container-low);
         &:active:enabled,
         &:focus:enabled {
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(var(--color-primary), 0.1);
-                border-radius: var(--button-radius);
-            }
+            @include state-layer($color-primary, $focused-and-pressed-state-layer-opacity);
         }
-    }
-    &:disabled {
-        color: rgba(var(--color-on-surface), 0.38);
-        background-color: rgba(var(--color-on-surface), 0.12);
-        box-shadow: none;
+        @include focus-indicator;
+        &:hover:enabled {
+            box-shadow: var(--elevation-level-two);
+            @include state-layer($color-primary, $hovered-state-layer-opacity);
+        }
+        &:disabled {
+            @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
+            box-shadow: none;
+        }
     }
 }
 
 .button--outlined {
     &.button--primary {
-        outline: solid 1px rgb(var(--color-outline));
-        background-color: rgba(0, 0, 0, 0);
-        &:disabled {
-            color: rgba(var(--color-on-surface), 0.38);
-            outline: solid 1px rgb(var(--color-on-surface), 0.12);
+        outline: solid 1px $color-outline;
+        @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
+        &:active:enabled,
+        &:focus:enabled {
+            @include state-layer($color-primary, $focused-and-pressed-state-layer-opacity);
         }
-        color: rgb(var(--color-primary));
+        @include focus-indicator;
         &:hover:enabled {
-            background-color: rgb(var(--color-primary), 0.08);
+            @include state-layer($color-primary, $hovered-state-layer-opacity);
+        }
+        &:disabled {
+            color: rgba($color-on-surface, $disabled-label-opacity);
+            outline: solid 1px rgba($color-on-surface, $disabled-container-opacity);
+        }
+    }
+}
+
+.button--tonal {
+    &.button--primary {
+        background-color: $color-secondary-container;
+        color: $color-on-secondary-container;
+        @include label-and-container-color($label-color: $color-on-secondary-container, $container-color: $color-secondary-container);
+        &:active:enabled,
+        &:focus:enabled {
+            @include state-layer($color-on-secondary-container, $focused-and-pressed-state-layer-opacity);
+        }
+        @include focus-indicator;
+        &:hover:enabled {
+            box-shadow: var(--elevation-level-one);
+            @include state-layer($color-on-secondary-container, $hovered-state-layer-opacity);
+        }
+        &:disabled {
+            @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
+        }
+    }
+}
+
+.button--text {
+    &.button--primary {
+        @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
+
+        &:active:enabled,
+        &:focus:enabled {
+            @include state-layer($color-on-secondary-container, $focused-and-pressed-state-layer-opacity);
+        }
+        @include focus-indicator;
+        &:hover:enabled {
+            @include state-layer($color-on-secondary-container, $hovered-state-layer-opacity);
         }
     }
 }
