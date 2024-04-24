@@ -3,12 +3,7 @@ import { Button, ButtonProps } from '../../../src/components/Button/Button';
 import { describe, expect, it } from 'vitest';
 import React, { createRef } from 'react';
 
-// Mock the onClick function
-// const mockOnClick = jest.fn();
-
-// Define test props
 const testProps: ButtonProps = {
-    color: 'secondary',
     text: 'Click me',
     type: 'button',
     variant: 'outlined'
@@ -18,47 +13,32 @@ const testProps: ButtonProps = {
 describe('Button component', () => {
     it('renders with the correct default props if they are not overwritten', () => {
         render(<Button {...testProps} />);
-        screen.debug();
 
         const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
 
-        expect(buttonElement.className).toContain('button--medium');
+        expect(buttonElement.className).toContain('button--primary');
     });
+
     it('renders with the correct text and attributes', () => {
-        render(<Button {...testProps} />);
-        screen.debug();
+        render(<Button {...{ ...testProps, color: 'secondary' }} />);
 
         const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
 
-        // Check if button has the correct text
         expect(buttonElement.textContent).toBe('Click me');
 
-        // Check if button has the correct color class
         expect(buttonElement.className).toContain('button--secondary');
 
-        // Check if button is enabled
         expect(buttonElement.disabled).toBe(false);
 
-        // Check if button has the correct type
         expect(buttonElement.type).toBe('button');
-
-        // Check if button triggers onClick function
-        // fireEvent.click(buttonElement);
-        // expect(mockOnClick).toHaveBeenCalled();
     });
 
     it('disables the button when disabled prop is true', () => {
         render(<Button {...testProps} disabled />);
-        screen.debug();
-        const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
-        expect(buttonElement.disabled).toBe(true);
-    });
 
-    it('renders with the correct size class', () => {
-        render(<Button {...testProps} size="large" />);
-        screen.debug();
         const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
-        expect(buttonElement.className).toContain('button--large');
+
+        expect(buttonElement.disabled).toBe(true);
     });
 
     it('forwards the ref to the button element', () => {

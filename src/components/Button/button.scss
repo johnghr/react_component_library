@@ -33,6 +33,9 @@ $disabled-label-opacity: 0.38;
 
 .button {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 2.5rem;
     border: none;
     border-radius: $radius;
