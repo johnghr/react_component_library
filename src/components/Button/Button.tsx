@@ -12,11 +12,12 @@ export interface ButtonProps {
 }
 
 export const Button = forwardRef(
-    (
-        { color = 'primary', disabled, size = 'medium', text, type, variant, onClick }: ButtonProps,
-        ref: React.ForwardedRef<HTMLButtonElement>
-    ) => {
+    ({ color = 'primary', disabled, size = 'medium', text, type, variant, onClick }: ButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
         const className = ['button', `button--${color}`, `button--${size}`, `button--${variant}`].join(' ');
-        return <button {...{ className, disabled, ref, type, onClick }}>{text}</button>;
+        return (
+            <button data-testid="button" {...{ className, disabled, ref, type, onClick }}>
+                {text}
+            </button>
+        );
     }
 );

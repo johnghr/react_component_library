@@ -17,18 +17,18 @@ const testProps: ButtonProps = {
 
 describe('Button component', () => {
     it('renders with the correct default props if they are not overwritten', () => {
-        const { getByText } = render(<Button {...testProps} />);
+        render(<Button {...testProps} />);
         screen.debug();
 
-        const buttonElement = getByText('Click me') as HTMLButtonElement;
+        const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
 
         expect(buttonElement.className).toContain('button--medium');
     });
     it('renders with the correct text and attributes', () => {
-        const { getByText } = render(<Button {...testProps} />);
+        render(<Button {...testProps} />);
         screen.debug();
 
-        const buttonElement = getByText('Click me') as HTMLButtonElement;
+        const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
 
         // Check if button has the correct text
         expect(buttonElement.textContent).toBe('Click me');
@@ -48,16 +48,16 @@ describe('Button component', () => {
     });
 
     it('disables the button when disabled prop is true', () => {
-        const { getByText } = render(<Button {...testProps} disabled />);
+        render(<Button {...testProps} disabled />);
         screen.debug();
-        const buttonElement = getByText('Click me') as HTMLButtonElement;
+        const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
         expect(buttonElement.disabled).toBe(true);
     });
 
     it('renders with the correct size class', () => {
-        const { getByText } = render(<Button {...testProps} size="large" />);
+        render(<Button {...testProps} size="large" />);
         screen.debug();
-        const buttonElement = getByText('Click me') as HTMLButtonElement;
+        const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
         expect(buttonElement.className).toContain('button--large');
     });
 
