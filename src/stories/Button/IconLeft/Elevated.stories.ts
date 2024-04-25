@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../components/Button/Button';
+import { Button } from '../../../components/Button/Button';
 
 const meta = {
-    title: 'Button/Eleveated',
+    title: 'Button/Eleveated/IconLeft',
     component: Button,
     parameters: {
         layout: 'centered'
@@ -18,6 +18,7 @@ type Story = StoryObj<typeof meta>;
 export const Eleveated: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
         variant: 'elevated'
@@ -27,6 +28,7 @@ export const Eleveated: Story = {
 export const EleveatedHovered: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
         variant: 'elevated'
@@ -39,6 +41,7 @@ export const EleveatedHovered: Story = {
 export const EleveatedActive: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
         variant: 'elevated'
@@ -51,6 +54,7 @@ export const EleveatedActive: Story = {
 export const EleveatedFocused: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
         variant: 'elevated'
@@ -63,6 +67,7 @@ export const EleveatedFocused: Story = {
 export const EleveatedDisabled: Story = {
     args: {
         disabled: true,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
         variant: 'elevated'

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../components/Button/Button';
+import { Button } from '../../../components/Button/Button';
 
 const meta = {
-    title: 'Button/Eleveated',
+    title: 'Button/Outlined/IconLeft',
     component: Button,
     parameters: {
         layout: 'centered'
@@ -15,56 +15,61 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Eleveated: Story = {
+export const Outlined: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'outlined'
     }
 };
 
-export const EleveatedHovered: Story = {
+export const OutlinedHovered: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'outlined'
     },
     parameters: {
         pseudo: { hover: true }
     }
 };
 
-export const EleveatedActive: Story = {
+export const OutlinedActive: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'outlined'
     },
     parameters: {
         pseudo: { active: true }
     }
 };
 
-export const EleveatedFocused: Story = {
+export const OutlinedFocused: Story = {
     args: {
         disabled: false,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'outlined'
     },
     parameters: {
         pseudo: { focus: true }
     }
 };
 
-export const EleveatedDisabled: Story = {
+export const OutlinedDisabled: Story = {
     args: {
         disabled: true,
+        iconLeft: 'add',
         text: 'Label',
         type: 'button',
-        variant: 'elevated'
+        variant: 'outlined'
     }
 };

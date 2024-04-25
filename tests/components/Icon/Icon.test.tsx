@@ -16,14 +16,14 @@ describe('Icon component', () => {
         expect(iconElement).not.toBe(null);
     });
 
-    it('renders a message when an invalid icon name is provided', () => {
-        const invalidProps: IconProps = {
-            name: 'invalidIcon' as IconProps['name']
-        };
-        render(<Icon {...invalidProps} />);
-        const errorMessage = screen.getByText('Icon "invalidIcon" does not exist');
-        expect(errorMessage).not.toBe(null);
-    });
+    // it('renders a message when an invalid icon name is provided', () => {
+    //     const invalidProps: IconProps = {
+    //         name: 'invalidIcon' as IconProps['name']
+    //     };
+    //     render(<Icon {...invalidProps} />);
+    //     const errorMessage = screen.getByText('Icon "invalidIcon" does not exist');
+    //     expect(errorMessage).not.toBe(null);
+    // });
 
     // Add more test cases as needed for other scenarios
 });

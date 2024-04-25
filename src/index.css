@@ -1,68 +1,8 @@
-/* @import './scss/color.scss'; */
-
-:root {
-    /* Color Scheme */
-    --color-primary: 101, 85, 143;
-    --color-surface-tint: 103, 80, 164;
-    --color-on-primary: 255, 255, 255;
-    --color-primary-container: 234, 221, 255;
-    --color-on-primary-container: 33, 0, 93;
-    --color-secondary: 98, 91, 113;
-    --color-on-secondary: 255, 255, 255;
-    --color-secondary-container: 232, 222, 248;
-    --color-on-secondary-container: 29, 25, 43;
-    --color-tertiary: 125, 82, 96;
-    --color-on-tertiary: 255, 255, 255;
-    --color-tertiary-container: 255, 216, 228;
-    --color-on-tertiary-container: 49, 17, 29;
-    --color-error: 179, 38, 30;
-    --color-on-error: 255, 255, 255;
-    --color-error-container: 249, 222, 220;
-    --color-on-error-container: 65, 14, 11;
-    --color-background: 254, 247, 255;
-    --color-on-background: 29, 27, 32;
-    --color-surface: 254, 247, 255;
-    --color-on-surface: 29, 27, 32;
-    --color-surface-variant: 231, 224, 236;
-    --color-on-surface-variant: 73, 69, 79;
-    --color-outline: 121, 116, 126;
-    --color-outline-variant: 202, 196, 208;
-    --color-shadow: 0, 0, 0;
-    --color-scrim: 0, 0, 0;
-    --color-inverse-surface: 50, 47, 53;
-    --color-inverse-on-surface: 245, 239, 247;
-    --color-inverse-primary: 208, 188, 255;
-    --color-primary-fixed: 234, 221, 255;
-    --color-on-primary-fixed: 33, 0, 93;
-    --color-primary-fixed-dim: 208, 188, 255;
-    --color-on-primary-fixed-variant: 79, 55, 139;
-    --color-secondary-fixed: 232, 222, 248;
-    --color-on-secondary-fixed: 29, 25, 43;
-    --color-secondary-fixed-dim: 204, 194, 220;
-    --color-on-secondary-fixed-variant: 74, 68, 88;
-    --color-tertiary-fixed: 255, 216, 228;
-    --color-on-tertiary-fixed: 49, 17, 29;
-    --color-tertiary-fixed-dim: 239, 184, 200;
-    --color-on-tertiary-fixed-variant: 99, 59, 72;
-    --color-surface-dim: 222, 216, 225;
-    --color-surface-bright: 254, 247, 255;
-    --color-surface-container-lowest: 255, 255, 255;
-    --color-surface-container-low: 247, 242, 250;
-    --color-surface-container: 243, 237, 247;
-    --color-surface-container-high: 236, 230, 240;
-    --color-surface-container-highest: 230, 224, 233;
-
-    /* Elevation */
-    --elevation-level-one: 0 1px 2px 0 rgba(var(--color-shadow), 0.3), 0 1px 3px 1px rgba(var(--color-shadow), 0.15);
-    --elevation-level-two: 0 1px 2px 0 rgba(var(--color-shadow), 0.3), 0 2px 6px 2px rgba(var(--color-shadow), 0.15);
-}
-
 :root {
     font-family: 'Roboto Serif', serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    background-color: var(--color, -surfac, e);
 }
 
 @media (prefers-color-scheme: light) {

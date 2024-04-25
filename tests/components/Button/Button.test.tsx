@@ -11,22 +11,12 @@ const testProps: ButtonProps = {
 };
 
 describe('Button component', () => {
-    it('renders with the correct default props if they are not overwritten', () => {
+    it('renders with the correct text and attributes', () => {
         render(<Button {...testProps} />);
 
         const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
 
-        expect(buttonElement.className).toContain('button--primary');
-    });
-
-    it('renders with the correct text and attributes', () => {
-        render(<Button {...{ ...testProps, color: 'secondary' }} />);
-
-        const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
-
         expect(buttonElement.textContent).toBe('Click me');
-
-        expect(buttonElement.className).toContain('button--secondary');
 
         expect(buttonElement.disabled).toBe(false);
 

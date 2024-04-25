@@ -17,7 +17,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Filled: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -27,7 +26,6 @@ export const Filled: Story = {
 
 export const FilledHovered: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -40,7 +38,6 @@ export const FilledHovered: Story = {
 
 export const FilledActive: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -53,7 +50,6 @@ export const FilledActive: Story = {
 
 export const FilledFocused: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -66,7 +62,6 @@ export const FilledFocused: Story = {
 
 export const FilledDisabled: Story = {
     args: {
-        color: 'primary',
         disabled: true,
         text: 'Label',
         type: 'button',

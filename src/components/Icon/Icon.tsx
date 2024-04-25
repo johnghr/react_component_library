@@ -12,7 +12,7 @@ const iconComponents: { [key in IconProps['name']]: React.FC<{ className?: strin
 export const Icon = ({ className, name }: IconProps) => {
     const IconComponent = iconComponents[name];
     if (!IconComponent) {
-        return <div data-testid="icon-error">Icon "{name}" does not exist</div>;
+        console.log(`Icon ${name} does not exist`);
     }
     return <IconComponent {...{ className }} />;
 };

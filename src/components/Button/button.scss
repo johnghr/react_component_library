@@ -1,4 +1,5 @@
 @import '../../scss/color.scss';
+@import '../../scss/elevation.scss';
 
 $radius: 1.25rem;
 $focused-and-pressed-state-layer-opacity: 0.1;
@@ -48,30 +49,15 @@ $disabled-label-opacity: 0.38;
     &:disabled {
         cursor: default;
     }
-}
-
-.button--filled {
-    position: relative;
-    &.button--primary {
-        @include label-and-container-color($label-color: $color-on-primary, $container-color: $color-primary);
-        &:active:enabled,
-        &:focus:enabled {
-            @include state-layer($color-on-primary, $focused-and-pressed-state-layer-opacity);
-        }
-        @include focus-indicator;
-        &:hover:enabled {
-            box-shadow: var(--elevation-level-one);
-            @include state-layer($color-on-primary, $hovered-state-layer-opacity);
-        }
-        &:disabled {
-            @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
-        }
+    &--icon-left {
+        padding-left: 1rem;
     }
-}
+    &--icon-right {
+        padding-right: 1rem;
+    }
 
-.button--elevated {
-    box-shadow: var(--elevation-level-one);
-    &.button--primary {
+    &--elevated {
+        box-shadow: $elevation-level-one;
         @include label-and-container-color($label-color: $color-primary, $container-color: $color-surface-container-low);
         &:active:enabled,
         &:focus:enabled {
@@ -79,7 +65,7 @@ $disabled-label-opacity: 0.38;
         }
         @include focus-indicator;
         &:hover:enabled {
-            box-shadow: var(--elevation-level-two);
+            box-shadow: $elevation-level-two;
             @include state-layer($color-primary, $hovered-state-layer-opacity);
         }
         &:disabled {
@@ -87,10 +73,25 @@ $disabled-label-opacity: 0.38;
             box-shadow: none;
         }
     }
-}
 
-.button--outlined {
-    &.button--primary {
+    &--filled {
+        position: relative;
+        @include label-and-container-color($label-color: $color-on-primary, $container-color: $color-primary);
+        &:active:enabled,
+        &:focus:enabled {
+            @include state-layer($color-on-primary, $focused-and-pressed-state-layer-opacity);
+        }
+        @include focus-indicator;
+        &:hover:enabled {
+            box-shadow: $elevation-level-one;
+            @include state-layer($color-on-primary, $hovered-state-layer-opacity);
+        }
+        &:disabled {
+            @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
+        }
+    }
+
+    &--outlined {
         outline: solid 1px $color-outline;
         @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
         &:active:enabled,
@@ -106,10 +107,20 @@ $disabled-label-opacity: 0.38;
             outline: solid 1px rgba($color-on-surface, $disabled-container-opacity);
         }
     }
-}
 
-.button--tonal {
-    &.button--primary {
+    &--text {
+        @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
+        &:active:enabled,
+        &:focus:enabled {
+            @include state-layer($color-on-secondary-container, $focused-and-pressed-state-layer-opacity);
+        }
+        @include focus-indicator;
+        &:hover:enabled {
+            @include state-layer($color-on-secondary-container, $hovered-state-layer-opacity);
+        }
+    }
+
+    &--tonal {
         background-color: $color-secondary-container;
         color: $color-on-secondary-container;
         @include label-and-container-color($label-color: $color-on-secondary-container, $container-color: $color-secondary-container);
@@ -119,26 +130,23 @@ $disabled-label-opacity: 0.38;
         }
         @include focus-indicator;
         &:hover:enabled {
-            box-shadow: var(--elevation-level-one);
+            box-shadow: $elevation-level-one;
             @include state-layer($color-on-secondary-container, $hovered-state-layer-opacity);
         }
         &:disabled {
             @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
         }
     }
-}
 
-.button--text {
-    &.button--primary {
-        @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
-
-        &:active:enabled,
-        &:focus:enabled {
-            @include state-layer($color-on-secondary-container, $focused-and-pressed-state-layer-opacity);
+    &__icon {
+        fill: currentColor;
+        height: 18px;
+        width: 18px;
+        &--right {
+            margin-left: 8px;
         }
-        @include focus-indicator;
-        &:hover:enabled {
-            @include state-layer($color-on-secondary-container, $hovered-state-layer-opacity);
+        &--left {
+            margin-right: 8px;
         }
     }
 }

@@ -17,7 +17,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Outlined: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -27,7 +26,6 @@ export const Outlined: Story = {
 
 export const OutlinedHovered: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -40,7 +38,6 @@ export const OutlinedHovered: Story = {
 
 export const OutlinedActive: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -53,7 +50,6 @@ export const OutlinedActive: Story = {
 
 export const OutlinedFocused: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -66,7 +62,6 @@ export const OutlinedFocused: Story = {
 
 export const OutlinedDisabled: Story = {
     args: {
-        color: 'primary',
         disabled: true,
         text: 'Label',
         type: 'button',

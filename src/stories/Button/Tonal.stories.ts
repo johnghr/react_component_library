@@ -17,7 +17,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Tonal: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -27,7 +26,6 @@ export const Tonal: Story = {
 
 export const TonalHovered: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -40,7 +38,6 @@ export const TonalHovered: Story = {
 
 export const TonalActive: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -53,7 +50,6 @@ export const TonalActive: Story = {
 
 export const TonalFocused: Story = {
     args: {
-        color: 'primary',
         disabled: false,
         text: 'Label',
         type: 'button',
@@ -66,7 +62,6 @@ export const TonalFocused: Story = {
 
 export const TonalDisabled: Story = {
     args: {
-        color: 'primary',
         disabled: true,
         text: 'Label',
         type: 'button',

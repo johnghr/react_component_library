@@ -3,7 +3,6 @@ import './button.scss';
 import { Icon, IconProps } from '../Icon/Icon';
 
 export interface ButtonProps {
-    color?: 'primary' | 'secondary' | 'tertiary' | 'neutral' | 'error';
     disabled?: boolean;
     iconLeft?: IconProps['name'];
     iconRight?: IconProps['name'];
@@ -14,14 +13,18 @@ export interface ButtonProps {
 }
 
 export const Button = forwardRef(
-    ({ color = 'primary', disabled, iconLeft, iconRight, text, type, variant, onClick }: ButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
-        const buttonClassName = ['button', `button--${color}`, `button--${variant}`].join(' ');
-        const iconClassName = [`button__icon--${color}`, `button__icon--${variant}`].join(' ');
+    ({ disabled, iconLeft, iconRight, text, type, variant, onClick }: ButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
+        const buttonClassName = ['button', `button--${variant}`, iconLeft ? 'button--icon-left' : '', iconRight ? 'button--icon-right' : ''].join(
+            ' '
+        );
+        const iconLeftClassName = ['button__icon', 'button__icon--left', `button__icon--${variant}`].join(' ');
+        const iconRightClassName = ['button__icon', 'button__icon--right', `button__icon--${variant}`].join(' ');
+
         return (
             <button data-testid="button" {...{ className: buttonClassName, disabled, ref, type, onClick }}>
-                {iconLeft && <Icon {...{ className: iconClassName, name: iconLeft }} />}
+                {iconLeft && <Icon data-testid="left-icon" {...{ className: iconLeftClassName, name: iconLeft }} />}
                 {text}
-                {iconRight && <Icon {...{ className: iconClassName, name: iconRight }} />}
+                {iconRight && <Icon data-testid="right-icon" {...{ className: iconRightClassName, name: iconRight }} />}
             </button>
         );
     }
