@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Button/Button';
+import { Button } from '../../../components/Buttons/Common/CommonButton';
 
 const meta = {
     title: 'Button/Outlined/IconLeft',

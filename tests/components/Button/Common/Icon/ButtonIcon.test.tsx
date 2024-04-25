@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { Button, ButtonProps } from '../../../../src/components/Button/Button';
+import { CommonButton, CommonButtonProps } from '../../../../../src/components/Buttons/Common/CommonButton';
 import { describe, expect, it } from 'vitest';
 import React from 'react';
 
-const testProps: ButtonProps = {
+const testProps: CommonButtonProps = {
     text: 'Click me',
     type: 'button',
     variant: 'outlined'
@@ -12,7 +12,7 @@ const testProps: ButtonProps = {
 
 describe('Button components Icon', () => {
     it('renders with left icon', () => {
-        render(<Button {...testProps} iconLeft="add" />);
+        render(<CommonButton {...testProps} iconLeft="add" />);
 
         const LeftIconElement = screen.getByTestId('add-icon');
 
@@ -20,7 +20,7 @@ describe('Button components Icon', () => {
     });
 
     it('renders with right icon', () => {
-        const { getByTestId } = render(<Button text="Click Me" type="button" variant="filled" iconRight="add" />);
+        const { getByTestId } = render(<CommonButton text="Click Me" type="button" variant="filled" iconRight="add" />);
 
         const RightIconElement = getByTestId('add-icon');
 

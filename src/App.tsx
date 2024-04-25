@@ -1,4 +1,4 @@
-import { Button } from './components/Button/Button';
+import { Button } from './components/Buttons/Common/CommonButton';
 import './App.css';
 import './test.scss';
 
