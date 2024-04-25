@@ -1,5 +1,6 @@
 @import '../../scss/color.scss';
 @import '../../scss/elevation.scss';
+@import '../../scss/typography.scss';
 
 $radius: 1.25rem;
 $focused-and-pressed-state-layer-opacity: 0.1;
@@ -43,8 +44,11 @@ $disabled-label-opacity: 0.38;
     cursor: pointer;
     padding: 0 1.5rem;
     text-align: center;
+    font-family: $typescale-label-large-font;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: $typescale-label-large-size;
     line-height: 1.6667rem;
-    font-size: 1.1667rem;
     font-weight: 500;
     &:disabled {
         cursor: default;

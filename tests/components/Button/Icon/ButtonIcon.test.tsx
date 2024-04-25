@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Button, ButtonProps } from '../../../../src/components/Button/Button';
 import { describe, expect, it } from 'vitest';
-import React, { createRef } from 'react';
+import React from 'react';
 
 const testProps: ButtonProps = {
     text: 'Click me',

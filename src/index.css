@@ -1,5 +1,5 @@
 :root {
-    font-family: 'Roboto Serif', serif;
+    font-family: 'Roboto', sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
@@ -10,4 +10,11 @@
         color: #213547;
         background-color: #ffffff;
     }
+}
+
+.test-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

@@ -4,16 +4,15 @@ import './test.scss';
 
 function App() {
     return (
-        // <Button
-        //     {...{
-        //         color: 'primary',
-        //         disabled: true,
-        //         text: 'Label',
-        //         type: 'button',
-        //         variant: 'filled'
-        //     }}
-        // />
-        <div className="test-class"></div>
+        <div className="test-class">
+            <Button
+                {...{
+                    iconLeft: 'add',
+                    text: 'Label',
+                    variant: 'filled'
+                }}
+            />
+        </div>
     );
 }
 

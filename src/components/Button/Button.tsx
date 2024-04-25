@@ -1,15 +1,12 @@
-import { forwardRef } from 'react';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
 import './button.scss';
 import { Icon, IconProps } from '../Icon/Icon';
 
-export interface ButtonProps {
-    disabled?: boolean;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     iconLeft?: IconProps['name'];
     iconRight?: IconProps['name'];
     text: string;
-    type: 'button' | 'submit';
     variant: 'elevated' | 'filled' | 'outlined' | 'text' | 'tonal';
-    onClick?: () => void;
 }
 
 export const Button = forwardRef(
@@ -29,3 +26,5 @@ export const Button = forwardRef(
         );
     }
 );
+
+Button.displayName = 'Button';

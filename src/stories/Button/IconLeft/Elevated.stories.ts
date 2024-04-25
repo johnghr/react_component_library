@@ -19,7 +19,7 @@ export const Eleveated: Story = {
     args: {
         disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        text: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     }
@@ -29,7 +29,7 @@ export const EleveatedHovered: Story = {
     args: {
         disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        text: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     },
@@ -42,7 +42,7 @@ export const EleveatedActive: Story = {
     args: {
         disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        text: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     },
@@ -55,7 +55,7 @@ export const EleveatedFocused: Story = {
     args: {
         disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        text: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     },
@@ -68,7 +68,7 @@ export const EleveatedDisabled: Story = {
     args: {
         disabled: true,
         iconLeft: 'add',
-        text: 'Label',
+        text: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     }
