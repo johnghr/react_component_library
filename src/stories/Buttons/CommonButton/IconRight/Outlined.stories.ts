@@ -1,75 +1,71 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Text/IconRight',
-    component: Button,
+    title: 'Buttons/CommonButton/Outlined/IconRight',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Text: Story = {
+export const Outlined: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
-        variant: 'text'
+        variant: 'outlined'
     }
 };
 
-export const TextHovered: Story = {
+export const OutlinedHovered: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
-        variant: 'text'
+        variant: 'outlined'
     },
     parameters: {
         pseudo: { hover: true }
     }
 };
 
-export const TextActive: Story = {
+export const OutlinedActive: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
-        variant: 'text'
+        variant: 'outlined'
     },
     parameters: {
         pseudo: { active: true }
     }
 };
 
-export const TextFocused: Story = {
+export const OutlinedFocused: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
-        variant: 'text'
+        variant: 'outlined'
     },
     parameters: {
         pseudo: { focus: true }
     }
 };
 
-export const TextDisabled: Story = {
+export const OutlinedDisabled: Story = {
     args: {
         disabled: true,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
-        variant: 'text'
+        variant: 'outlined'
     }
 };

@@ -1,15 +1,24 @@
+import './IconButton.scss';
 import { Icon, IconProps } from '../../Icon/Icon';
-import { BaseButton } from '../types/Button.types';
+import { joinClassNames } from '../../../helpers/joinClassNames';
+import { Button, ButtonProps } from '../Button';
+import { forwardRef } from 'react';
 
-export interface IconButtonProps extends BaseButton {
+export interface IconButtonProps extends ButtonProps {
     icon: IconProps['name'];
+    label: string;
+    selected?: boolean;
+    tooltip: string;
+    variant: 'filled' | 'outlined' | 'standard' | 'tonal';
 }
 
-export const IconButton = ({ icon, variant }: IconButtonProps) => {
-    const buttonClassName = ['button', `button--${variant}`].join(' ');
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ disabled, icon, label, selected, tooltip, variant, onClick }, ref) => {
+    const className = joinClassNames(['button', 'icon-button', `icon-button--${variant}`, selected && 'icon-button--selected']);
     return (
-        <button {...{ className: buttonClassName }} data-testid="icon-button">
-            <Icon data-testid="icon-button-icon" {...{ className: iconLeftClassName, name: icon }} />
-        </button>
+        <Button aria-label={label} {...{ className, disabled, onClick, ref, title: tooltip }}>
+            <Icon {...{ className: `icon-button__icon icon-button__icon--${variant}`, name: icon }} />
+        </Button>
     );
-};
+});
+
+IconButton.displayName = 'IconButton';

@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../components/Buttons/Common/CommonButton';
+import { IconButton } from '../../../components/Buttons/Icon/IconButton';
 
 const meta = {
-    title: 'Button/Filled',
-    component: Button,
+    title: 'Buttons/IconButton/Filled',
+    component: IconButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof IconButton>;
 
 export default meta;
 
@@ -17,8 +17,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Filled: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        icon: 'add',
+        label: 'add',
+        tooltip: 'Clear and concise description of button action',
         type: 'button',
         variant: 'filled'
     }
@@ -26,8 +27,9 @@ export const Filled: Story = {
 
 export const FilledHovered: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        icon: 'add',
+        label: 'add',
+        tooltip: 'Clear and concise description of button action',
         type: 'button',
         variant: 'filled'
     },
@@ -38,8 +40,9 @@ export const FilledHovered: Story = {
 
 export const FilledActive: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        icon: 'add',
+        label: 'add',
+        tooltip: 'Clear and concise description of button action',
         type: 'button',
         variant: 'filled'
     },
@@ -50,8 +53,9 @@ export const FilledActive: Story = {
 
 export const FilledFocused: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        icon: 'add',
+        label: 'add',
+        tooltip: 'Clear and concise description of button action',
         type: 'button',
         variant: 'filled'
     },
@@ -63,7 +67,9 @@ export const FilledFocused: Story = {
 export const FilledDisabled: Story = {
     args: {
         disabled: true,
-        text: 'Label',
+        icon: 'add',
+        label: 'add',
+        tooltip: 'Clear and concise description of button action',
         type: 'button',
         variant: 'filled'
     }

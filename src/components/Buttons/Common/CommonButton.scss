@@ -1,47 +1,11 @@
-@import '../../scss/color.scss';
-@import '../../scss/elevation.scss';
-@import '../../scss/typography.scss';
+@import '../../../scss/color.scss';
+@import '../../../scss/elevation.scss';
+@import '../../../scss/typography.scss';
+@import '../../../scss/shape.scss';
+@import '../Button.scss';
 
-$radius: 1.25rem;
-$focused-and-pressed-state-layer-opacity: 0.1;
-$hovered-state-layer-opacity: 0.08;
-$disabled-container-opacity: 0.12;
-$disabled-label-opacity: 0.38;
-
-@mixin label-and-container-color($label-color, $label-opacity: 1, $container-color, $container-opacity: 1) {
-    color: rgba($label-color, $label-opacity);
-    background-color: rgba($container-color, $container-opacity);
-}
-
-@mixin state-layer($color, $opacity) {
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($color, $opacity);
-        border-radius: $radius;
-    }
-}
-
-@mixin focus-indicator {
-    &:focus:enabled {
-        outline: solid 3px $color-secondary;
-        outline-offset: 2px;
-    }
-}
-
-.button {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.common-button {
     height: 2.5rem;
-    border: none;
-    border-radius: $radius;
-    cursor: pointer;
     padding: 0 1.5rem;
     text-align: center;
     font-family: $typescale-label-large-font;
@@ -50,9 +14,7 @@ $disabled-label-opacity: 0.38;
     font-size: $typescale-label-large-size;
     line-height: 1.6667rem;
     font-weight: 500;
-    &:disabled {
-        cursor: default;
-    }
+
     &--icon-left {
         padding-left: 1rem;
     }
@@ -121,6 +83,9 @@ $disabled-label-opacity: 0.38;
         @include focus-indicator;
         &:hover:enabled {
             @include state-layer($color-on-secondary-container, $hovered-state-layer-opacity);
+        }
+        &:disabled {
+            color: $color-on-surface;
         }
     }
 

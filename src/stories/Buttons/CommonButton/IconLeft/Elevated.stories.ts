@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Eleveated/IconLeft',
-    component: Button,
+    title: 'Buttons/CommonButton/Eleveated/IconLeft',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
@@ -17,9 +17,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Eleveated: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Elevated Button',
+        label: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     }
@@ -27,9 +26,8 @@ export const Eleveated: Story = {
 
 export const EleveatedHovered: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Elevated Button',
+        label: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     },
@@ -40,9 +38,8 @@ export const EleveatedHovered: Story = {
 
 export const EleveatedActive: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Elevated Button',
+        label: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     },
@@ -53,9 +50,8 @@ export const EleveatedActive: Story = {
 
 export const EleveatedFocused: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Elevated Button',
+        label: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     },
@@ -68,7 +64,7 @@ export const EleveatedDisabled: Story = {
     args: {
         disabled: true,
         iconLeft: 'add',
-        text: 'Elevated Button',
+        label: 'Elevated Button',
         type: 'button',
         variant: 'elevated'
     }

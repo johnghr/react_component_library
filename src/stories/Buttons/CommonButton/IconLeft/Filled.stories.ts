@@ -1,75 +1,71 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Text/IconLeft',
-    component: Button,
+    title: 'Buttons/CommonButton/Filled/IconLeft',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Text: Story = {
+export const Filled: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        label: 'Filled Button',
         type: 'button',
-        variant: 'text'
+        variant: 'filled'
     }
 };
 
-export const TextHovered: Story = {
+export const FilledHovered: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        label: 'Filled Button',
         type: 'button',
-        variant: 'text'
+        variant: 'filled'
     },
     parameters: {
         pseudo: { hover: true }
     }
 };
 
-export const TextActive: Story = {
+export const FilledActive: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        label: 'Filled Button',
         type: 'button',
-        variant: 'text'
+        variant: 'filled'
     },
     parameters: {
         pseudo: { active: true }
     }
 };
 
-export const TextFocused: Story = {
+export const FilledFocused: Story = {
     args: {
-        disabled: false,
         iconLeft: 'add',
-        text: 'Label',
+        label: 'Filled Button',
         type: 'button',
-        variant: 'text'
+        variant: 'filled'
     },
     parameters: {
         pseudo: { focus: true }
     }
 };
 
-export const TextDisabled: Story = {
+export const FilledDisabled: Story = {
     args: {
         disabled: true,
         iconLeft: 'add',
-        text: 'Label',
+        label: 'Filled Button',
         type: 'button',
-        variant: 'text'
+        variant: 'filled'
     }
 };

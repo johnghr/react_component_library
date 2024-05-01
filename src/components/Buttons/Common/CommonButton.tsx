@@ -1,26 +1,37 @@
 import { forwardRef } from 'react';
 import './CommonButton.scss';
 import { Icon, IconProps } from '../../Icon/Icon';
-import { BaseButton } from '../types/Button.types';
+import { joinClassNames } from '../../../helpers/joinClassNames';
+import { Button, ButtonProps } from '../Button';
 
-export interface CommonButtonProps extends BaseButton {
+export interface CommonButtonProps extends ButtonProps {
     iconLeft?: IconProps['name'];
     iconRight?: IconProps['name'];
-    text: string;
+    variant: 'elevated' | 'filled' | 'outlined' | 'label' | 'tonal';
 }
 
-export const CommonButton = forwardRef(
-    ({ disabled, iconLeft, iconRight, text, type, variant, onClick }: CommonButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
-        const buttonClassName = ['button', `button--${variant}`, iconLeft ? 'button--icon-left' : '', iconRight ? 'button--icon-right' : ''].join(
-            ' '
-        );
+export const CommonButton = forwardRef<HTMLButtonElement, CommonButtonProps>(
+    ({ disabled, iconLeft, iconRight, label, type, variant, onClick }, ref) => {
+        const buttonClassName = joinClassNames([
+            'button',
+            'common-button',
+            `common-button--${variant}`,
+            iconLeft && 'common-button--icon-left',
+            iconRight && 'common-button--icon-right'
+        ]);
 
+        const IconLeft = iconLeft && (
+            <Icon aria-hidden="true" data-testid="left-icon" {...{ className: 'common-button__icon common-button__icon--left', name: iconLeft }} />
+        );
+        const IconRight = iconRight && (
+            <Icon aria-hidden="true" data-testid="right-icon" {...{ className: 'common-button__icon common-button__icon--right', name: iconRight }} />
+        );
         return (
-            <button data-testid="button" {...{ className: buttonClassName, disabled, ref, type, onClick }}>
-                {iconLeft && <Icon data-testid="left-icon" {...{ className: 'button__icon button__icon--left', name: iconLeft }} />}
-                {text}
-                {iconRight && <Icon data-testid="right-icon" {...{ className: 'button__icon button__icon--right', name: iconRight }} />}
-            </button>
+            <Button data-testid="common-button" {...{ className: buttonClassName, disabled, ref, type, onClick }}>
+                {IconLeft}
+                {label}
+                {IconRight}
+            </Button>
         );
     }
 );

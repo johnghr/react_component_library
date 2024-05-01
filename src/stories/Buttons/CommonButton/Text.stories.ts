@@ -1,70 +1,66 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Tonal',
-    component: Button,
+    title: 'Buttons/CommonButton/Text',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Tonal: Story = {
+export const label: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        label: 'Text Button',
         type: 'button',
-        variant: 'tonal'
+        variant: 'text'
     }
 };
 
-export const TonalHovered: Story = {
+export const TextHovered: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        label: 'Text Button',
         type: 'button',
-        variant: 'tonal'
+        variant: 'text'
     },
     parameters: {
         pseudo: { hover: true }
     }
 };
 
-export const TonalActive: Story = {
+export const TextActive: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        label: 'Text Button',
         type: 'button',
-        variant: 'tonal'
+        variant: 'text'
     },
     parameters: {
         pseudo: { active: true }
     }
 };
 
-export const TonalFocused: Story = {
+export const TextFocused: Story = {
     args: {
-        disabled: false,
-        text: 'Label',
+        label: 'Text Button',
         type: 'button',
-        variant: 'tonal'
+        variant: 'text'
     },
     parameters: {
         pseudo: { focus: true }
     }
 };
 
-export const TonalDisabled: Story = {
+export const TextDisabled: Story = {
     args: {
         disabled: true,
-        text: 'Label',
+        label: 'Text Button',
         type: 'button',
-        variant: 'tonal'
+        variant: 'text'
     }
 };

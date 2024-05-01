@@ -1,0 +1,44 @@
+@import '../../scss/shape.scss';
+
+$focused-and-pressed-state-layer-opacity: 0.1;
+$hovered-state-layer-opacity: 0.08;
+$disabled-container-opacity: 0.12;
+$disabled-label-opacity: 0.38;
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $shape-corner-full;
+    border: none;
+    cursor: pointer;
+    &:disabled {
+        cursor: default;
+    }
+}
+
+@mixin label-and-container-color($label-color, $label-opacity: 1, $container-color, $container-opacity: 1) {
+    color: rgba($label-color, $label-opacity);
+    background-color: rgba($container-color, $container-opacity);
+}
+
+@mixin state-layer($color, $opacity) {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color, $opacity);
+        border-radius: $shape-corner-full;
+    }
+}
+
+@mixin focus-indicator {
+    &:focus:enabled {
+        outline: solid 3px $color-secondary;
+        outline-offset: 2px;
+    }
+}

@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Tonal/IconRight',
-    component: Button,
+    title: 'Buttons/CommonButton/Tonal/IconLeft',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
@@ -17,9 +17,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Tonal: Story = {
     args: {
-        disabled: false,
-        iconRight: 'add',
-        text: 'Label',
+        iconLeft: 'add',
+        label: 'Tonal Button',
         type: 'button',
         variant: 'tonal'
     }
@@ -27,9 +26,8 @@ export const Tonal: Story = {
 
 export const TonalHovered: Story = {
     args: {
-        disabled: false,
-        iconRight: 'add',
-        text: 'Label',
+        iconLeft: 'add',
+        label: 'Tonal Button',
         type: 'button',
         variant: 'tonal'
     },
@@ -40,9 +38,8 @@ export const TonalHovered: Story = {
 
 export const TonalActive: Story = {
     args: {
-        disabled: false,
-        iconRight: 'add',
-        text: 'Label',
+        iconLeft: 'add',
+        label: 'Tonal Button',
         type: 'button',
         variant: 'tonal'
     },
@@ -53,9 +50,8 @@ export const TonalActive: Story = {
 
 export const TonalFocused: Story = {
     args: {
-        disabled: false,
-        iconRight: 'add',
-        text: 'Label',
+        iconLeft: 'add',
+        label: 'Tonal Button',
         type: 'button',
         variant: 'tonal'
     },
@@ -67,8 +63,8 @@ export const TonalFocused: Story = {
 export const TonalDisabled: Story = {
     args: {
         disabled: true,
-        iconRight: 'add',
-        text: 'Label',
+        iconLeft: 'add',
+        label: 'Tonal Button',
         type: 'button',
         variant: 'tonal'
     }

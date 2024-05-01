@@ -1,18 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import { Button, ButtonProps } from '../../../src/components/Button/Button';
 import { describe, expect, it } from 'vitest';
 import React, { createRef } from 'react';
+import { CommonButton, CommonButtonProps } from '../../../../src/components/Buttons/Common/CommonButton';
 
-const testProps: ButtonProps = {
-    text: 'Click me',
+const testProps: CommonButtonProps = {
+    label: 'Click me',
     type: 'button',
     variant: 'outlined'
-    // onClick: mockOnClick
 };
 
 describe('Button component', () => {
     it('renders with the correct text and attributes', () => {
-        render(<Button {...testProps} />);
+        render(<CommonButton {...testProps} />);
 
         const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
 
@@ -24,7 +23,7 @@ describe('Button component', () => {
     });
 
     it('disables the button when disabled prop is true', () => {
-        render(<Button {...testProps} disabled />);
+        render(<CommonButton {...testProps} disabled />);
 
         const buttonElement = screen.getByTestId('button') as HTMLButtonElement;
 
@@ -34,7 +33,7 @@ describe('Button component', () => {
     it('forwards the ref to the button element', () => {
         const ref = createRef<HTMLButtonElement>();
 
-        render(<Button {...testProps} ref={ref} />);
+        render(<CommonButton {...testProps} ref={ref} />);
 
         const buttonElement = ref.current;
 

@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Outlined/IconLeft',
-    component: Button,
+    title: 'Buttons/CommonButton/Outlined',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
@@ -17,9 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Outlined: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
         variant: 'outlined'
     }
@@ -27,9 +25,7 @@ export const Outlined: Story = {
 
 export const OutlinedHovered: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
         variant: 'outlined'
     },
@@ -40,9 +36,7 @@ export const OutlinedHovered: Story = {
 
 export const OutlinedActive: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
         variant: 'outlined'
     },
@@ -53,9 +47,7 @@ export const OutlinedActive: Story = {
 
 export const OutlinedFocused: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
         variant: 'outlined'
     },
@@ -67,8 +59,7 @@ export const OutlinedFocused: Story = {
 export const OutlinedDisabled: Story = {
     args: {
         disabled: true,
-        iconLeft: 'add',
-        text: 'Label',
+        label: 'Outlined Button',
         type: 'button',
         variant: 'outlined'
     }

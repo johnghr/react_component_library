@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Filled/IconLeft',
-    component: Button,
+    title: 'Buttons/CommonButton/Filled/IconRight',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
@@ -17,9 +17,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Filled: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        iconRight: 'add',
+        label: 'Filled Button',
         type: 'button',
         variant: 'filled'
     }
@@ -27,9 +26,8 @@ export const Filled: Story = {
 
 export const FilledHovered: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        iconRight: 'add',
+        label: 'Filled Button',
         type: 'button',
         variant: 'filled'
     },
@@ -40,9 +38,8 @@ export const FilledHovered: Story = {
 
 export const FilledActive: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        iconRight: 'add',
+        label: 'Filled Button',
         type: 'button',
         variant: 'filled'
     },
@@ -53,9 +50,8 @@ export const FilledActive: Story = {
 
 export const FilledFocused: Story = {
     args: {
-        disabled: false,
-        iconLeft: 'add',
-        text: 'Label',
+        iconRight: 'add',
+        label: 'Filled Button',
         type: 'button',
         variant: 'filled'
     },
@@ -67,8 +63,8 @@ export const FilledFocused: Story = {
 export const FilledDisabled: Story = {
     args: {
         disabled: true,
-        iconLeft: 'add',
-        text: 'Label',
+        iconRight: 'add',
+        label: 'Filled Button',
         type: 'button',
         variant: 'filled'
     }

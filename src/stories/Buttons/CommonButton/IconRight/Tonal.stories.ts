@@ -1,75 +1,71 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/Buttons/Common/CommonButton';
+import { CommonButton } from '../../../../components/Buttons/Common/CommonButton';
 
 const meta = {
-    title: 'Button/Filled/IconRight',
-    component: Button,
+    title: 'Buttons/CommonButton/Tonal/IconRight',
+    component: CommonButton,
     parameters: {
         layout: 'centered'
     },
     args: { onClick: fn() }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof CommonButton>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Filled: Story = {
+export const Tonal: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Tonal Button',
         type: 'button',
-        variant: 'filled'
+        variant: 'tonal'
     }
 };
 
-export const FilledHovered: Story = {
+export const TonalHovered: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Tonal Button',
         type: 'button',
-        variant: 'filled'
+        variant: 'tonal'
     },
     parameters: {
         pseudo: { hover: true }
     }
 };
 
-export const FilledActive: Story = {
+export const TonalActive: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Tonal Button',
         type: 'button',
-        variant: 'filled'
+        variant: 'tonal'
     },
     parameters: {
         pseudo: { active: true }
     }
 };
 
-export const FilledFocused: Story = {
+export const TonalFocused: Story = {
     args: {
-        disabled: false,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Tonal Button',
         type: 'button',
-        variant: 'filled'
+        variant: 'tonal'
     },
     parameters: {
         pseudo: { focus: true }
     }
 };
 
-export const FilledDisabled: Story = {
+export const TonalDisabled: Story = {
     args: {
         disabled: true,
         iconRight: 'add',
-        text: 'Label',
+        label: 'Tonal Button',
         type: 'button',
-        variant: 'filled'
+        variant: 'tonal'
     }
 };
