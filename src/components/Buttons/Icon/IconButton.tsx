@@ -1,22 +1,38 @@
-import './IconButton.scss';
-import { Icon, IconProps } from '../../Icon/Icon';
-import { joinClassNames } from '../../../helpers/joinClassNames';
-import { Button, ButtonProps } from '../Button';
+import { Icon, Icons } from '@/components/_Icon/Icon';
+import { joinClassNames } from '@/helpers/joinClassNames';
+import { Button, ButtonProps } from '@/components/Buttons/Button';
 import { forwardRef } from 'react';
+import './IconButton.scss';
 
-export interface IconButtonProps extends ButtonProps {
-    icon: IconProps['name'];
+interface IconButtonBase extends ButtonProps {
+    icon: Icons;
     label: string;
-    selected?: boolean;
     tooltip: string;
     variant: 'filled' | 'outlined' | 'standard' | 'tonal';
 }
 
-export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ disabled, icon, label, selected, tooltip, variant, onClick }, ref) => {
-    const className = joinClassNames(['button', 'icon-button', `icon-button--${variant}`, selected && 'icon-button--selected']);
+export type IconButtonProps =
+    | (IconButtonBase & {
+          selected?: never;
+          toggle?: false | undefined;
+      })
+    | (IconButtonBase & {
+          selected: boolean;
+          toggle: true;
+      });
+
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ icon, label, selected, toggle, tooltip, variant, ...props }, ref) => {
+    const className = joinClassNames([
+        'button',
+        'icon-button',
+        `icon-button--${variant}`,
+        selected && 'icon-button--selected',
+        toggle && 'icon-button--toggle'
+    ]);
+
     return (
-        <Button aria-label={label} {...{ className, disabled, onClick, ref, title: tooltip }}>
-            <Icon {...{ className: `icon-button__icon icon-button__icon--${variant}`, name: icon }} />
+        <Button {...{ className, label, ref, title: tooltip, ...props }}>
+            <Icon {...{ className: 'icon-button__icon', filled: selected, focusable: false, name: icon }} />
         </Button>
     );
 });

@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { Icon, IconProps } from '../../../src/components/Icon/Icon';
+import { Icon, IconProps } from '@/components/_Icon/Icon';
 import { describe, expect, it } from 'vitest';
-import React from 'react';
 import '@testing-library/jest-dom';
 
 // Define test props
@@ -22,14 +21,14 @@ describe('Icon component', () => {
         render(<Icon {...testProps} />);
         const iconElement = screen.getByTestId('icon');
 
-        expect(iconElement).toHaveClass('icon add-icon ');
+        expect(iconElement).toHaveClass('icon');
     });
 
     it('renders the icon with the correct block scoped className', () => {
         render(<Icon {...testProps} className="block__icon" />);
         const iconElement = screen.getByTestId('icon');
 
-        expect(iconElement).toHaveClass('icon add-icon block__icon');
+        expect(iconElement).toHaveClass('icon block__icon');
     });
 
     it('renders the icon with the correct focusable attribute', () => {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import React, { createRef } from 'react';
-import { CommonButton, CommonButtonProps } from '../../../../src/components/Buttons/Common/CommonButton';
+import { createRef } from 'react';
+import { CommonButton, CommonButtonProps } from '@/components/Buttons/Common/CommonButton';
 
 const testProps: CommonButtonProps = {
     label: 'Click me',
