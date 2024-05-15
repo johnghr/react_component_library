@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react';
 import './Button.scss';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     label: string;

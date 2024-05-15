@@ -1,8 +1,8 @@
+import './IconButton.scss';
 import { Icon, Icons } from '@/components/_Icon/Icon';
 import { joinClassNames } from '@/helpers/joinClassNames';
 import { Button, ButtonProps } from '@/components/Buttons/Button';
 import { forwardRef } from 'react';
-import './IconButton.scss';
 
 interface IconButtonBase extends ButtonProps {
     icon: Icons;
@@ -26,13 +26,13 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ icon
         'button',
         'icon-button',
         `icon-button--${variant}`,
-        selected && 'icon-button--selected',
+        selected ? 'icon-button--selected' : 'icon-button--unselected',
         toggle && 'icon-button--toggle'
     ]);
 
     return (
-        <Button {...{ className, label, ref, title: tooltip, ...props }}>
-            <Icon {...{ className: 'icon-button__icon', filled: selected, focusable: false, name: icon }} />
+        <Button {...{ ['aria-checked']: selected, className, label, ref, role: toggle ? 'switch' : 'button', title: tooltip, ...props }}>
+            <Icon {...{ className: 'icon-button__icon', filled: selected, focusable: false, icon }} />
         </Button>
     );
 });

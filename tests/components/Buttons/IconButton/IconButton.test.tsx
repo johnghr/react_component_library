@@ -17,19 +17,23 @@ describe('IconButton', () => {
         const icon = getByTestId('icon');
 
         expect(button).toBeInTheDocument();
-        expect(icon).toBeInTheDocument();
         expect(button).toHaveAttribute('title', 'Click to add');
+        expect(button).toHaveClass('button');
         expect(button).toHaveClass('icon-button');
+        expect(button).toHaveClass('icon-button--outlined');
+        expect(icon).toBeInTheDocument();
+        expect(icon).toHaveClass('icon-button__icon');
     });
 
-    it('renders as selected when `selected` prop is true (for toggleable IconButton)', () => {
+    it('renders IconButton as selected when `selected` prop is true (for toggleable IconButton)', () => {
         const { getByTestId } = render(<IconButton {...defaultProps} selected toggle />);
         const button = getByTestId('button');
 
         expect(button).toHaveClass('icon-button--selected');
+        expect(button).toHaveAttribute('aria-checked', 'true');
     });
 
-    it('renders with filled variant', () => {
+    it('renders IconButton with filled variant', () => {
         const { getByTestId } = render(<IconButton {...defaultProps} variant="filled" />);
         const button = getByTestId('button');
 
