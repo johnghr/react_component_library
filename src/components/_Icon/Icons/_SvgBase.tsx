@@ -8,9 +8,5 @@ export const SvgBase: React.FC<React.SVGProps<SVGSVGElement>> = ({
     viewBox = '0 -960 960 960',
     ...props
 }: React.SVGProps<SVGSVGElement>) => {
-    return (
-        <svg data-testid="icon" {...{ className: joinClassNames(['icon', className]), height, viewBox, width, ...props }}>
-            {children}
-        </svg>
-    );
+    return <svg {...{ className: joinClassNames(['icon', className]), ['data-testid']: 'icon', height, viewBox, width, ...props }}>{children}</svg>;
 };

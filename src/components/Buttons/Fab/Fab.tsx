@@ -12,7 +12,7 @@ export const fabSizes = [undefined, 'small', 'large'] as const;
 
 export type FabSize = (typeof fabSizes)[number];
 
-interface FabProps extends ButtonProps {
+export interface FabProps extends ButtonProps {
     color?: FabColor;
     disabled?: never;
     icon: IconKey;
