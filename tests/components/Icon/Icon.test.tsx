@@ -6,7 +6,7 @@ import '@testing-library/jest-dom';
 // Define test props
 const testProps: IconProps = {
     focusable: false,
-    name: 'add'
+    icon: 'add'
 };
 
 describe('Icon component', () => {

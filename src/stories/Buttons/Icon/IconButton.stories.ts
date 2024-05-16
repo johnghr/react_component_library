@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconButton as IconButtonComponent } from '@/components/Buttons/Icon/IconButton';
+import { IconButton as IconButtonComponent, iconButtonVariants } from '@/components/Buttons/Icon/IconButton';
+import { iconKeys } from '@/components/_Icon/Icon';
 
 const meta = {
-    title: 'Buttons/IconButton',
+    title: 'Buttons/Icon buttons',
     component: IconButtonComponent,
     parameters: {
         layout: 'centered'
@@ -13,7 +14,7 @@ const meta = {
             control: { type: 'radio' }
         },
         icon: {
-            options: ['add', 'favourite', 'settings'],
+            options: iconKeys,
             control: { type: 'select' }
         },
         toggle: {
@@ -27,7 +28,7 @@ const meta = {
             if: { arg: 'toggle' }
         },
         variant: {
-            options: ['filled', 'tonal', 'outlined'],
+            options: iconButtonVariants,
             control: { type: 'select' }
         }
     }

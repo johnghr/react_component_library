@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CommonButton as CommonButtonComponent } from '@/components/Buttons/Common/CommonButton';
+import { CommonButton as CommonButtonComponent, commonButtonVariants } from '@/components/Buttons/Common/CommonButton';
+import { iconKeys } from '@/components/_Icon/Icon';
 
 const meta = {
-    title: 'Buttons/CommonButton',
+    title: 'Buttons/Common buttons',
     component: CommonButtonComponent,
     parameters: {
         layout: 'centered'
@@ -13,15 +14,15 @@ const meta = {
             control: { type: 'radio' }
         },
         iconLeft: {
-            options: ['add', 'favourite', 'settings'],
+            options: iconKeys,
             control: { type: 'select' }
         },
         iconRight: {
-            options: ['add', 'favourite', 'settings'],
+            options: iconKeys,
             control: { type: 'select' }
         },
         variant: {
-            options: ['elevated', 'filled', 'outlined', 'text', 'tonal'],
+            options: commonButtonVariants,
             control: { type: 'select' }
         }
     }

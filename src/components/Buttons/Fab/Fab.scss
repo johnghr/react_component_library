@@ -1,0 +1,118 @@
+@import '../../../scss/color.scss';
+@import '../../../scss/elevation.scss';
+@import '../../../scss/shape.scss';
+@import '../Button.scss';
+
+@mixin fab-variant($shape, $elevation, $label-color, $container-color) {
+    border-radius: $shape;
+    @include label-and-container-color($label-color: $label-color, $container-color: $container-color);
+    @include active-and-focus-enabled($label-color, $shape);
+    @include focus-indicator;
+    @include hover-enabled($label-color, $elevation, $shape);
+}
+
+.fab {
+    box-shadow: $elevation-level-three;
+    height: 3rem;
+    width: 3rem;
+
+    &.fab--lowered {
+        box-shadow: $elevation-level-one;
+    }
+
+    &--primary {
+        @include fab-variant($shape-corner-large, $elevation-level-four, $color-on-primary-container, $color-primary-container);
+        &.fab--lowered {
+            @include fab-variant($shape-corner-large, $elevation-level-two, $color-on-primary-container, $color-primary-container);
+        }
+        &.fab--small {
+            height: 2.5rem;
+            width: 2.5rem;
+            @include fab-variant($shape-corner-medium, $elevation-level-four, $color-on-primary-container, $color-primary-container);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-medium, $elevation-level-two, $color-on-primary-container, $color-primary-container);
+            }
+        }
+        &.fab--large {
+            height: 6rem;
+            width: 6rem;
+            @include fab-variant($shape-corner-extra-large, $elevation-level-four, $color-on-primary-container, $color-primary-container);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-extra-large, $elevation-level-two, $color-on-primary-container, $color-primary-container);
+            }
+        }
+    }
+
+    &--secondary {
+        @include fab-variant($shape-corner-large, $elevation-level-four, $color-on-secondary-container, $color-secondary-container);
+        &.fab--lowered {
+            @include fab-variant($shape-corner-large, $elevation-level-two, $color-on-secondary-container, $color-secondary-container);
+        }
+        &.fab--small {
+            height: 2.5rem;
+            width: 2.5rem;
+            @include fab-variant($shape-corner-medium, $elevation-level-four, $color-on-secondary-container, $color-secondary-container);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-medium, $elevation-level-two, $color-on-secondary-container, $color-secondary-container);
+            }
+        }
+        &.fab--large {
+            height: 6rem;
+            width: 6rem;
+            @include fab-variant($shape-corner-extra-large, $elevation-level-four, $color-on-secondary-container, $color-secondary-container);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-extra-large, $elevation-level-two, $color-on-secondary-container, $color-secondary-container);
+            }
+        }
+    }
+
+    &--surface {
+        @include fab-variant($shape-corner-large, $elevation-level-four, $color-primary, $color-surface-container-high);
+        &.fab--lowered {
+            @include fab-variant($shape-corner-large, $elevation-level-two, $color-primary, $color-surface-container-low);
+        }
+        &.fab--small {
+            height: 2.5rem;
+            width: 2.5rem;
+            @include fab-variant($shape-corner-medium, $elevation-level-four, $color-primary, $color-surface-container-high);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-medium, $elevation-level-two, $color-primary, $color-surface-container-low);
+            }
+        }
+        &.fab--large {
+            height: 6rem;
+            width: 6rem;
+            @include fab-variant($shape-corner-extra-large, $elevation-level-four, $color-primary, $color-surface-container-high);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-extra-large, $elevation-level-two, $color-primary, $color-surface-container-low);
+            }
+        }
+    }
+
+    &--tertiary {
+        @include fab-variant($shape-corner-large, $elevation-level-four, $color-on-tertiary-container, $color-tertiary-container);
+        &.fab--lowered {
+            @include fab-variant($shape-corner-large, $elevation-level-two, $color-on-tertiary-container, $color-tertiary-container);
+        }
+        &.fab--small {
+            height: 2.5rem;
+            width: 2.5rem;
+            @include fab-variant($shape-corner-medium, $elevation-level-four, $color-on-tertiary-container, $color-tertiary-container);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-medium, $elevation-level-two, $color-on-tertiary-container, $color-tertiary-container);
+            }
+        }
+        &.fab--large {
+            height: 6rem;
+            width: 6rem;
+            @include fab-variant($shape-corner-extra-large, $elevation-level-four, $color-on-tertiary-container, $color-tertiary-container);
+            &.fab--lowered {
+                @include fab-variant($shape-corner-extra-large, $elevation-level-two, $color-on-tertiary-container, $color-tertiary-container);
+            }
+        }
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+}

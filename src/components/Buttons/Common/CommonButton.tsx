@@ -1,13 +1,17 @@
 import './CommonButton.scss';
 import { forwardRef } from 'react';
-import { Icon, Icons } from '@/components/_Icon/Icon';
+import { Icon, IconKey } from '@/components/_Icon/Icon';
 import { joinClassNames } from '@/helpers/joinClassNames';
 import { Button, ButtonProps } from '../Button';
 
+export const commonButtonVariants = ['elevated', 'filled', 'outlined', 'text', 'tonal'] as const;
+
+export type CommonButtonVariant = (typeof commonButtonVariants)[number];
+
 export interface CommonButtonProps extends ButtonProps {
-    iconLeft?: Icons;
-    iconRight?: Icons;
-    variant: 'elevated' | 'filled' | 'outlined' | 'text' | 'tonal';
+    iconLeft?: IconKey;
+    iconRight?: IconKey;
+    variant: CommonButtonVariant;
 }
 
 export const CommonButton = forwardRef<HTMLButtonElement, CommonButtonProps>(({ iconLeft, iconRight, label, variant, ...props }, ref) => {

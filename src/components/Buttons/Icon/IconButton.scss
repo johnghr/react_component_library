@@ -4,6 +4,7 @@
 .icon-button {
     height: 2.5rem;
     width: 2.5rem;
+    border-radius: $shape-corner-full;
 
     &--filled {
         @include label-and-container-color($label-color: $color-on-primary, $container-color: $color-primary);
@@ -55,9 +56,23 @@
         @include outlined-disabled;
     }
 
+    &--standard {
+        @include label-and-container-color($label-color: $color-on-surface-variant, $container-color: rgb(0, 0, 0), $container-opacity: 0);
+        @include active-and-focus-enabled($color-on-surface);
+        @include focus-indicator;
+        @include hover-enabled($color-on-surface-variant);
+
+        &.icon-button--toggle.icon-button--selected {
+            @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
+            @include active-and-focus-enabled($color-primary);
+            @include focus-indicator;
+            @include hover-enabled($color-primary);
+        }
+
+        @include outlined-disabled;
+    }
+
     &__icon {
         fill: currentColor;
-        height: 24px;
-        width: 24px;
     }
 }

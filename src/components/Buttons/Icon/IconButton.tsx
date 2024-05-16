@@ -1,14 +1,18 @@
 import './IconButton.scss';
-import { Icon, Icons } from '@/components/_Icon/Icon';
+import { Icon, IconKey } from '@/components/_Icon/Icon';
 import { joinClassNames } from '@/helpers/joinClassNames';
 import { Button, ButtonProps } from '@/components/Buttons/Button';
 import { forwardRef } from 'react';
 
+export const iconButtonVariants = ['filled', 'outlined', 'standard', 'tonal'] as const;
+
+export type IconButtonVariant = (typeof iconButtonVariants)[number];
+
 interface IconButtonBase extends ButtonProps {
-    icon: Icons;
+    icon: IconKey;
     label: string;
     tooltip: string;
-    variant: 'filled' | 'outlined' | 'standard' | 'tonal';
+    variant: IconButtonVariant;
 }
 
 export type IconButtonProps =

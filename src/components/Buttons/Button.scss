@@ -11,7 +11,6 @@ $disabled-label-opacity: 0.38;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: $shape-corner-full;
     border: none;
     cursor: pointer;
     &:disabled {
@@ -24,7 +23,7 @@ $disabled-label-opacity: 0.38;
     background-color: rgba($container-color, $container-opacity);
 }
 
-@mixin state-layer($color, $opacity) {
+@mixin state-layer($color, $opacity, $shape: $shape-corner-full) {
     &::before {
         content: '';
         position: absolute;
@@ -33,23 +32,23 @@ $disabled-label-opacity: 0.38;
         width: 100%;
         height: 100%;
         background-color: rgba($color, $opacity);
-        border-radius: $shape-corner-full;
+        border-radius: $shape;
     }
 }
 
-@mixin active-and-focus-enabled($color) {
+@mixin active-and-focus-enabled($color, $shape: $shape-corner-full) {
     &:active:enabled,
     &:focus:enabled {
-        @include state-layer($color, $focused-and-pressed-state-layer-opacity);
+        @include state-layer($color, $focused-and-pressed-state-layer-opacity, $shape);
     }
 }
 
-@mixin hover-enabled($color, $elevation-level: false) {
+@mixin hover-enabled($color, $elevation-level: false, $shape: $shape-corner-full) {
     &:hover:enabled {
         @if $elevation-level {
             box-shadow: $elevation-level;
         }
-        @include state-layer($color, $hovered-state-layer-opacity);
+        @include state-layer($color, $hovered-state-layer-opacity, $shape);
     }
 }
 
