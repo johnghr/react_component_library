@@ -33,7 +33,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Fab: Story = {
+export const FAB: Story = {
     args: {
         icon: 'edit',
         label: 'edit',

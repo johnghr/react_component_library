@@ -3,7 +3,7 @@ import { IconButton as IconButtonComponent, iconButtonVariants } from '@/compone
 import { iconKeys } from '@/components/_Icon/Icon';
 
 const meta = {
-    title: 'Buttons/Icon buttons',
+    title: 'Buttons/IconButton',
     component: IconButtonComponent,
     parameters: {
         layout: 'centered'

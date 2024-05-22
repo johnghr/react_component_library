@@ -3,7 +3,7 @@ import { CommonButton as CommonButtonComponent, commonButtonVariants } from '@/c
 import { iconKeys } from '@/components/_Icon/Icon';
 
 const meta = {
-    title: 'Buttons/Common buttons',
+    title: 'Buttons/CommonButton',
     component: CommonButtonComponent,
     parameters: {
         layout: 'centered'
