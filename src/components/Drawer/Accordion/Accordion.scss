@@ -1,0 +1,39 @@
+@import '../../../scss/color.scss';
+@import '../../../scss/state-layer.scss';
+@import '../../../scss/shape.scss';
+@import '../Drawer.scss';
+@import '../../Buttons/Button.scss';
+
+.accordion {
+    &__content {
+        &--closed {
+            display: none;
+        }
+    }
+
+    &-closed {
+        display: none;
+    }
+
+    &__trigger {
+        position: relative;
+        @include accordion-trigger-and-link-container;
+        &:active:enabled,
+        :focus:enabled {
+            @include focus-and-active-state($color-on-secondary-container);
+        }
+        &:hover:enabled {
+            @include hover-state($color-on-secondary-container);
+        }
+
+        &__arrow-icon {
+            fill: $color-on-secondary-container;
+            margin-left: auto;
+            transition: transform 0.3s ease-in-out;
+
+            &--up {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

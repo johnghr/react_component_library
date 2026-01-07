@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
+# react-components (UI component library) — Work in Progress
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a small but growing **React component library** exploring design-system patterns, composable UI primitives, and the intersection of visual design and implementation.
 
-Currently, two official plugins are available:
+It reflects how I approach:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   building reusable, typed components
+-   structuring UI libraries for real product use
+-   translating visual design intent into maintainable code
 
-## Expanding the ESLint configuration
+This is **not a complete production design system**, but a practical foundation and working playground for patterns, components, and conventions.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## What’s Included
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Components
+
+-   **Buttons**
+    -   CommonButton (variants: elevated, filled, outlined, text, tonal)
+    -   IconButton
+    -   FAB / Extended FAB
+-   **Navigation & Layout**
+    -   Drawer
+    -   Navigation Drawer
+    -   Navigation Link
+    -   Accordion / Accordion Drawer
+-   **Search**
+    -   Search input and related patterns
+-   **Icons**
+    -   Typed icon system with shared SVG base
+
+### Supporting Structure
+
+-   **Storybook** for visual exploration and API discovery
+-   **SCSS foundations** for colour, typography, elevation, and state layers
+-   **Component-level tests** using Vitest + Testing Library
+-   Typed component APIs and constrained variants using TypeScript
+
+---
+
+## Design & Engineering Approach
+
+This project is intentionally opinionated:
+
+-   Components are designed to be **composable rather than overly abstract**
+-   Variants are constrained and typed to keep APIs predictable
+-   Styling is organised around shared foundations rather than per-component overrides
+-   Storybook stories are treated as part of the documentation surface
+-   Tests focus on behaviour and public APIs, not implementation details
+
+The goal is to keep the system **approachable for simple use cases**, while allowing it to scale to more complex ones without becoming fragile.
+
+---
+
+## Running Locally
+
+Install dependencies:
+
+```bash
+npm install
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

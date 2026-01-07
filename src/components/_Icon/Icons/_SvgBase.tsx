@@ -1,12 +1,28 @@
 import { joinClassNames } from '@/helpers/joinClassNames';
 
-export const SvgBase: React.FC<React.SVGProps<SVGSVGElement>> = ({
+interface SvgBaseProps extends React.SVGProps<SVGSVGElement> {}
+
+export const SvgBase: React.FC<SvgBaseProps> = ({
+    'aria-hidden': ariaHidden = 'true',
     className,
     children,
     height = 24,
     width = 24,
     viewBox = '0 -960 960 960',
     ...props
-}: React.SVGProps<SVGSVGElement>) => {
-    return <svg {...{ className: joinClassNames(['icon', className]), ['data-testid']: 'icon', height, viewBox, width, ...props }}>{children}</svg>;
+}: SvgBaseProps) => {
+    return (
+        <svg
+            {...{
+                ...props,
+                'aria-hidden': ariaHidden,
+                className: joinClassNames(['icon', className]),
+                height,
+                viewBox,
+                width
+            }}
+        >
+            {children}
+        </svg>
+    );
 };

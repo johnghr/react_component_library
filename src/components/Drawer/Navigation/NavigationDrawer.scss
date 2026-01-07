@@ -1,0 +1,16 @@
+.navigation-drawer {
+    overflow-y: hidden;
+    padding: 0;
+
+    &__links-container {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 1rem 0.75rem;
+    }
+
+    &__logout-button-container {
+        justify-content: flex-end;
+        padding: 1rem;
+        flex-shrink: 0;
+    }
+}

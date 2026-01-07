@@ -6,14 +6,18 @@
 @mixin fab-variant($shape, $elevation, $label-color, $container-color) {
     border-radius: $shape;
     @include label-and-container-color($label-color: $label-color, $container-color: $container-color);
-    @include active-and-focus-enabled($label-color, $shape);
-    @include focus-indicator;
-    @include hover-enabled($label-color, $elevation, $shape);
+    :focus:enabled {
+        @include focus-and-active-state($label-color, $shape);
+    }
+    &:hover:enabled {
+        @include hover-state($label-color, $elevation, $shape);
+    }
 }
 
 .fab {
     box-shadow: $elevation-level-three;
     height: 3.5rem;
+    position: relative;
     width: 3.5rem;
 
     &.fab--lowered {

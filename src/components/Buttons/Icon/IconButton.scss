@@ -8,15 +8,23 @@
 
     &--filled {
         @include label-and-container-color($label-color: $color-on-primary, $container-color: $color-primary);
-        @include active-and-focus-enabled($color-on-primary);
-        @include focus-indicator;
-        @include hover-enabled($color-on-primary);
+        &:active:enabled,
+        :focus:enabled {
+            @include focus-and-active-state($color-on-primary);
+        }
+        &:hover:enabled {
+            @include hover-state($color-on-primary);
+        }
 
         &.icon-button--toggle.icon-button--unselected {
             @include label-and-container-color($label-color: $color-primary, $container-color: $color-surface-container-highest);
-            @include active-and-focus-enabled($color-primary);
-            @include focus-indicator;
-            @include hover-enabled($color-primary);
+            &:active:enabled,
+            :focus:enabled {
+                @include focus-and-active-state($color-primary);
+            }
+            &:hover:enabled {
+                @include hover-state($color-primary);
+            }
         }
 
         @include tonal-and-filled-disabled;
@@ -24,15 +32,23 @@
 
     &--tonal {
         @include label-and-container-color($label-color: $color-on-secondary-container, $container-color: $color-secondary-container);
-        @include active-and-focus-enabled($color-on-secondary-container);
-        @include focus-indicator;
-        @include hover-enabled($color-on-secondary-container);
+        &:active:enabled,
+        :focus:enabled {
+            @include focus-and-active-state($color-on-secondary-container);
+        }
+        &:hover:enabled {
+            @include hover-state($color-on-secondary-container);
+        }
 
         &.icon-button--toggle.icon-button--unselected {
             @include label-and-container-color($label-color: $color-on-surface-variant, $container-color: $color-surface-container-highest);
-            @include active-and-focus-enabled($color-on-surface-variant);
-            @include focus-indicator;
-            @include hover-enabled($color-on-surface-variant);
+            &:active:enabled,
+            :focus:enabled {
+                @include focus-and-active-state($color-on-surface-variant);
+            }
+            &:hover:enabled {
+                @include hover-state($color-on-surface-variant);
+            }
         }
 
         @include tonal-and-filled-disabled;
@@ -41,16 +57,24 @@
     &--outlined {
         outline: solid 1px $color-outline;
         @include label-and-container-color($label-color: $color-on-surface-variant, $container-color: rgb(0, 0, 0), $container-opacity: 0);
-        @include active-and-focus-enabled($color-on-surface);
-        @include focus-indicator;
-        @include hover-enabled($color-on-surface-variant);
+        &:active:enabled,
+        :focus:enabled {
+            @include focus-and-active-state($color-on-surface);
+        }
+        &:hover:enabled {
+            @include hover-state($color-on-surface-variant);
+        }
 
         &.icon-button--toggle.icon-button--selected {
             outline: none;
             @include label-and-container-color($label-color: $color-inverse-on-surface, $container-color: $color-inverse-surface);
-            @include active-and-focus-enabled($color-inverse-on-surface);
-            @include focus-indicator;
-            @include hover-enabled($color-inverse-on-surface);
+            &:active:enabled,
+            :focus:enabled {
+                @include focus-and-active-state($color-inverse-on-surface);
+            }
+            &:hover:enabled {
+                @include hover-state($color-inverse-on-surface);
+            }
         }
 
         @include outlined-disabled;
@@ -58,15 +82,23 @@
 
     &--standard {
         @include label-and-container-color($label-color: $color-on-surface-variant, $container-color: rgb(0, 0, 0), $container-opacity: 0);
-        @include active-and-focus-enabled($color-on-surface);
-        @include focus-indicator;
-        @include hover-enabled($color-on-surface-variant);
+        &:active:enabled,
+        :focus:enabled {
+            @include focus-and-active-state($color-on-surface);
+        }
+        &:hover:enabled {
+            @include hover-state($color-on-surface-variant);
+        }
 
         &.icon-button--toggle.icon-button--selected {
             @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
-            @include active-and-focus-enabled($color-primary);
-            @include focus-indicator;
-            @include hover-enabled($color-primary);
+            &:active:enabled,
+            :focus:enabled {
+                @include focus-and-active-state($color-primary);
+            }
+            &:hover:enabled {
+                @include hover-state($color-primary);
+            }
         }
 
         @include outlined-disabled;

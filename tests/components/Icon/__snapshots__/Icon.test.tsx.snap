@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Icon component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    aria-hidden="true"
+    class="icon"
+    focusable="false"
+    height="24"
+    viewBox="0 -960 960 960"
+    width="24"
+  >
+    <path
+      d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+    />
+  </svg>
+</DocumentFragment>
+`;

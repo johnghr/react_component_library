@@ -1,0 +1,80 @@
+@import '../../scss/color.scss';
+@import '../../scss/elevation.scss';
+@import '../../scss/shape.scss';
+@import '../../scss/state-layer.scss';
+@import '../../scss/typography.scss';
+
+.search {
+    &__container {
+        align-items: center;
+        display: flex;
+        position: relative;
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+
+            @include state-layer($color-on-surface, $state-layer-hovered-opacity);
+
+            &:focus-within {
+                @include state-layer($color-on-surface, 0);
+            }
+
+            &:active {
+                @include state-layer($color-on-surface, $state-layer-focused-and-pressed-opacity);
+            }
+        }
+    }
+
+    &__input {
+        background-color: $color-surface-container-high;
+        border-radius: $shape-corner-full;
+        border: none;
+        box-shadow: $elevation-level-three;
+        color: $color-on-surface;
+        height: 3.5rem;
+        padding: 0 3.5rem;
+        position: relative;
+        width: 100%;
+
+        @include typescale-body-large;
+
+        &:focus-visible:enabled {
+            @include focus-indicator;
+        }
+
+        &:hover:enabled {
+            cursor: pointer;
+
+            &:focus {
+                cursor: text;
+            }
+        }
+
+        &::placeholder {
+            color: $color-on-surface-variant;
+        }
+
+        &::-webkit-search-cancel-button {
+            display: none;
+        }
+
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    &__clear-button {
+        fill: $color-on-surface-variant;
+        position: absolute;
+        right: 1rem;
+        z-index: 1;
+    }
+
+    &__leading-icon {
+        fill: $color-on-surface;
+        left: 1rem;
+        position: absolute;
+        z-index: 1;
+    }
+}

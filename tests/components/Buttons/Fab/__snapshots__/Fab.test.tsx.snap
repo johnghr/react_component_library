@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Fab > matches the snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Add"
+    class="button button fab fab--primary"
+    data-testid="fab"
+    title="Click to add"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon fab__icon"
+      data-testid="fab__icon"
+      focusable="false"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+    >
+      <path
+        d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
+`;

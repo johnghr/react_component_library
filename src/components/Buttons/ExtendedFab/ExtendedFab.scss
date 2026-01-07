@@ -5,49 +5,60 @@
 
 @mixin fab-variant($shape, $elevation, $label-color, $container-color) {
     @include label-and-container-color($label-color: $label-color, $container-color: $container-color);
-    @include active-and-focus-enabled($label-color, $shape);
-    @include focus-indicator;
-    @include hover-enabled($label-color, $elevation, $shape);
+    &:active:enabled,
+    :focus:enabled {
+        @include focus-and-active-state($label-color, $shape);
+    }
+    &:hover:enabled {
+        @include hover-state($label-color, $elevation, $shape);
+    }
 }
 
-.fab {
+.extended-fab {
+    border-radius: $shape-corner-large;
     box-shadow: $elevation-level-three;
     height: 3.5rem;
-    border-radius: $shape-corner-large;
+    margin: 1rem;
+    min-width: 5rem;
+    padding: 0 1.5rem;
+    position: relative;
 
-    &.fab--lowered {
+    &.extended-fab--lowered {
         box-shadow: $elevation-level-one;
     }
 
     &--primary {
         @include fab-variant($shape-corner-large, $elevation-level-four, $color-on-primary-container, $color-primary-container);
-        &.fab--lowered {
+        &.extended-fab--lowered {
             @include fab-variant($shape-corner-large, $elevation-level-two, $color-on-primary-container, $color-primary-container);
         }
     }
 
     &--secondary {
         @include fab-variant($shape-corner-large, $elevation-level-four, $color-on-secondary-container, $color-secondary-container);
-        &.fab--lowered {
+        &.extended-fab--lowered {
             @include fab-variant($shape-corner-large, $elevation-level-two, $color-on-secondary-container, $color-secondary-container);
         }
     }
 
     &--surface {
         @include fab-variant($shape-corner-large, $elevation-level-four, $color-primary, $color-surface-container-high);
-        &.fab--lowered {
+        &.extended-fab--lowered {
             @include fab-variant($shape-corner-large, $elevation-level-two, $color-primary, $color-surface-container-low);
         }
     }
 
     &--tertiary {
         @include fab-variant($shape-corner-large, $elevation-level-four, $color-on-tertiary-container, $color-tertiary-container);
-        &.fab--lowered {
+        &.extended-fab--lowered {
             @include fab-variant($shape-corner-large, $elevation-level-two, $color-on-tertiary-container, $color-tertiary-container);
         }
     }
 
     &__icon {
         fill: currentColor;
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: 0.75rem;
     }
 }

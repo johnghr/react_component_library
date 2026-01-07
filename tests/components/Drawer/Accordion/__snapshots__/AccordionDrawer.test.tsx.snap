@@ -1,0 +1,90 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AccordionDrawer component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="drawer-headline"
+    class="drawer"
+    role="region"
+  >
+    <h2
+      class="drawer__headline"
+      id="drawer-headline"
+    >
+      Accordion Drawer
+    </h2>
+    <div
+      class="accordion"
+    >
+      <h2>
+        <button
+          aria-controls="accordion-content"
+          aria-expanded="false"
+          aria-label="Accordion 1"
+          class="button accordion__trigger"
+          data-testid="accordion-trigger"
+          id="accordion-trigger"
+        >
+          Accordion 1
+          <svg
+            aria-hidden="true"
+            class="icon icon accordion__trigger__arrow-icon"
+            data-testid="accordion-trigger-arrow-icon"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M480-360 280-560h400L480-360Z"
+            />
+          </svg>
+        </button>
+      </h2>
+      <div
+        aria-labelledby="accordion-trigger"
+        class="hidden"
+        data-testid="accordion-content"
+        id="accordion-content"
+      >
+        Test content
+      </div>
+    </div>
+    <div
+      class="accordion"
+    >
+      <h2>
+        <button
+          aria-controls="accordion-content"
+          aria-expanded="false"
+          aria-label="Accordion 2"
+          class="button accordion__trigger"
+          data-testid="accordion-trigger"
+          id="accordion-trigger"
+        >
+          Accordion 2
+          <svg
+            aria-hidden="true"
+            class="icon icon accordion__trigger__arrow-icon"
+            data-testid="accordion-trigger-arrow-icon"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M480-360 280-560h400L480-360Z"
+            />
+          </svg>
+        </button>
+      </h2>
+      <div
+        aria-labelledby="accordion-trigger"
+        class="hidden"
+        data-testid="accordion-content"
+        id="accordion-content"
+      >
+        Test content
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

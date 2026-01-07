@@ -26,8 +26,8 @@ export const Fab = forwardRef<HTMLButtonElement, FabProps>(({ color = 'primary',
     const className = joinClassNames(['button', 'fab', `fab--${color}`, lowered && `fab--lowered`, size && `fab--${size}`]);
     const iconSize = size === 'large' ? 36 : undefined;
     return (
-        <Button {...{ className, label, ref, title: tooltip, ...props }}>
-            <Icon {...{ className: 'fab__icon', focusable: false, height: iconSize, icon, width: iconSize }} />
+        <Button {...{ className, label, ref, title: tooltip, ...props }} data-testid="fab">
+            <Icon {...{ className: 'fab__icon', focusable: false, height: iconSize, icon, width: iconSize }} data-testid="fab__icon" />
         </Button>
     );
 });

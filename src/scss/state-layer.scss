@@ -1,0 +1,40 @@
+$state-layer-focused-and-pressed-opacity: 0.1;
+$state-layer-hovered-opacity: 0.08;
+$state-layer-disabled-container-opacity: 0.12;
+$state-layer-disabled-label-opacity: 0.38;
+
+@mixin state-layer($color, $opacity, $shape: $shape-corner-full) {
+    &::before {
+        content: '';
+        background-color: rgba($color, $opacity);
+        border-radius: $shape;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+@mixin focus-indicator {
+    outline: solid 3px $color-secondary;
+    outline-offset: 2px;
+}
+
+@mixin focus-and-active-state($color, $shape: $shape-corner-full) {
+    @include state-layer($color, $state-layer-focused-and-pressed-opacity, $shape);
+}
+
+@mixin hover-state($color, $elevation-level: false, $shape: $shape-corner-full) {
+    @if $elevation-level {
+        box-shadow: $elevation-level;
+    }
+
+    @include state-layer($color, $state-layer-hovered-opacity, $shape);
+
+    &:active {
+        @include state-layer($color, $state-layer-focused-and-pressed-opacity, $shape);
+    }
+}

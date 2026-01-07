@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ExtendedFab > matches the snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Add"
+    class="button button extended-fab extended-fab--primary"
+    data-testid="extended-fab"
+    title="Click to add"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon extended-fab__icon"
+      data-testid="extended-fab__icon"
+      focusable="false"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+    >
+      <path
+        d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+      />
+    </svg>
+    Add
+  </button>
+</DocumentFragment>
+`;

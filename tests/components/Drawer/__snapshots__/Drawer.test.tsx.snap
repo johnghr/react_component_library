@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Drawer component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="drawer-headline"
+    class="drawer"
+    role="region"
+  >
+    <h2
+      class="drawer__headline"
+      id="drawer-headline"
+    >
+      Test Drawer
+    </h2>
+    This is the drawer content
+  </section>
+</DocumentFragment>
+`;

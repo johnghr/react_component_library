@@ -1,3 +1,4 @@
+import { joinClassNames } from '@/helpers/joinClassNames';
 import './Button.scss';
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 
@@ -7,9 +8,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export type ButtonPropsWithRef = { props: ButtonProps; ref: React.ForwardedRef<HTMLButtonElement> };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ children, label, ...props }, ref) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ children, className, label, ...props }, ref) => {
     return (
-        <button aria-label={label} data-testid="button" {...{ ...props, ref }}>
+        <button {...{ ...props, ref }} aria-label={label} className={joinClassNames(['button', className])}>
             {children}
         </button>
     );

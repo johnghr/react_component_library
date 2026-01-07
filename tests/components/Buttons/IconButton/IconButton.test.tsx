@@ -13,8 +13,8 @@ describe('IconButton', () => {
 
     it('renders IconButton correctly with default props', () => {
         const { getByTestId } = render(<IconButton {...defaultProps} />);
-        const button = getByTestId('button');
-        const icon = getByTestId('icon');
+        const button = getByTestId('icon-button');
+        const icon = getByTestId('icon-button__icon');
 
         expect(button).toBeInTheDocument();
         expect(button).toHaveAttribute('title', 'Click to add');
@@ -27,7 +27,7 @@ describe('IconButton', () => {
 
     it('renders IconButton as selected when `selected` prop is true (for toggleable IconButton)', () => {
         const { getByTestId } = render(<IconButton {...defaultProps} selected toggle />);
-        const button = getByTestId('button');
+        const button = getByTestId('icon-button');
 
         expect(button).toHaveClass('icon-button--selected');
         expect(button).toHaveAttribute('aria-checked', 'true');
@@ -35,15 +35,20 @@ describe('IconButton', () => {
 
     it('renders IconButton with filled variant', () => {
         const { getByTestId } = render(<IconButton {...defaultProps} variant="filled" />);
-        const button = getByTestId('button');
+        const button = getByTestId('icon-button');
 
         expect(button).toHaveClass('icon-button--filled');
     });
 
     it('renders disabled IconButton', () => {
         const { getByTestId } = render(<IconButton {...defaultProps} disabled />);
-        const button = getByTestId('button');
+        const button = getByTestId('icon-button');
 
         expect(button).toBeDisabled();
+    });
+
+    it('matches the snapshot', () => {
+        const { asFragment } = render(<IconButton {...defaultProps} />);
+        expect(asFragment()).toMatchSnapshot();
     });
 });

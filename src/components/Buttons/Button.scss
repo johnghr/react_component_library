@@ -1,18 +1,24 @@
 @import '../../scss/shape.scss';
 @import '../../scss/elevation.scss';
-
-$focused-and-pressed-state-layer-opacity: 0.1;
-$hovered-state-layer-opacity: 0.08;
-$disabled-container-opacity: 0.12;
-$disabled-label-opacity: 0.38;
+@import '../../scss/state-layer.scss';
+@import '../../scss/typography.scss';
 
 .button {
-    position: relative;
-    display: flex;
-    justify-content: center;
     align-items: center;
     border: none;
     cursor: pointer;
+    display: flex;
+    font-optical-sizing: auto;
+    font-style: normal;
+    justify-content: center;
+    text-align: center;
+
+    @include typescale-label-large;
+
+    &:focus-visible:enabled {
+        @include focus-indicator;
+    }
+
     &:disabled {
         cursor: default;
     }
@@ -23,51 +29,20 @@ $disabled-label-opacity: 0.38;
     background-color: rgba($container-color, $container-opacity);
 }
 
-@mixin state-layer($color, $opacity, $shape: $shape-corner-full) {
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($color, $opacity);
-        border-radius: $shape;
-    }
-}
-
-@mixin active-and-focus-enabled($color, $shape: $shape-corner-full) {
-    &:active:enabled,
-    &:focus:enabled {
-        @include state-layer($color, $focused-and-pressed-state-layer-opacity, $shape);
-    }
-}
-
-@mixin hover-enabled($color, $elevation-level: false, $shape: $shape-corner-full) {
-    &:hover:enabled {
-        @if $elevation-level {
-            box-shadow: $elevation-level;
-        }
-        @include state-layer($color, $hovered-state-layer-opacity, $shape);
-    }
-}
-
-@mixin focus-indicator {
-    &:focus:enabled {
-        outline: solid 3px $color-secondary;
-        outline-offset: 2px;
-    }
-}
-
 @mixin outlined-disabled {
     &:disabled {
-        color: rgba($color-on-surface, $disabled-label-opacity);
-        outline: solid 1px rgba($color-on-surface, $disabled-container-opacity);
+        color: rgba($color-on-surface, $state-layer-disabled-label-opacity);
+        outline: solid 1px rgba($color-on-surface, $state-layer-disabled-container-opacity);
     }
 }
 
 @mixin tonal-and-filled-disabled {
     &:disabled {
-        @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
+        @include label-and-container-color(
+            $color-on-surface,
+            $state-layer-disabled-label-opacity,
+            $color-on-surface,
+            $state-layer-disabled-container-opacity
+        );
     }
 }

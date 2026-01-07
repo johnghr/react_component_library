@@ -1,0 +1,53 @@
+@import '../../scss/color.scss';
+@import '../../scss/typography.scss';
+@import '../../scss/shape.scss';
+@import '../Buttons/Button.scss';
+
+.drawer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 0;
+    overflow-y: auto;
+    padding: 1rem 0.75rem;
+    position: fixed;
+    top: 0;
+    width: 22.5rem;
+
+    &__headline {
+        align-items: center;
+        color: $color-on-surface-variant;
+        display: flex;
+        flex-shrink: 0;
+        font-family: $typescale-title-small-font;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: $typescale-title-small-size;
+        font-weight: $typescale-title-small-weight;
+        height: 3.5rem;
+        letter-spacing: $typescale-title-small-tracking;
+        line-height: $typescale-title-small-line-height;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+    }
+}
+
+@mixin accordion-trigger-and-link-container {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: $shape-corner-full;
+    color: $color-on-secondary-container;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 3.5rem;
+    padding: 0 1.5rem 0 1rem;
+    position: relative;
+    width: 100%;
+
+    &__leading-icon {
+        fill: $color-on-secondary-container;
+        margin-right: 0.75rem;
+    }
+}

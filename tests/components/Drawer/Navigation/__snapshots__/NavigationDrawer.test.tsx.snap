@@ -1,0 +1,118 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavigationDrawer component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="drawer-headline"
+    class="drawer navigation-drawer"
+  >
+    <h2
+      class="drawer__headline"
+      id="drawer-headline"
+    >
+      Test NavigationDrawer
+    </h2>
+    <a
+      class="navigation-link"
+      href="#dashboard"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon navigation-link__leading-icon"
+        data-testid="navigation-link-leading-icon"
+        height="24"
+        viewBox="0 -960 960 960"
+        width="24"
+      >
+        <path
+          d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z"
+        />
+      </svg>
+      Dashboard
+    </a>
+    <div
+      class="accordion"
+    >
+      <h2>
+        <button
+          aria-controls="accordion-content"
+          aria-expanded="false"
+          aria-label="Users"
+          class="button accordion__trigger"
+          data-testid="accordion-trigger"
+          id="accordion-trigger"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon accordion__trigger__leading-icon"
+            data-testid="accordion-trigger-leading-icon"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113Z"
+            />
+          </svg>
+          Users
+          <svg
+            aria-hidden="true"
+            class="icon icon accordion__trigger__arrow-icon"
+            data-testid="accordion-trigger-arrow-icon"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M480-360 280-560h400L480-360Z"
+            />
+          </svg>
+        </button>
+      </h2>
+      <div
+        aria-labelledby="accordion-trigger"
+        class="hidden"
+        data-testid="accordion-content"
+        id="accordion-content"
+      >
+        <a
+          class="navigation-link navigation-link--accordion"
+          href="/users"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon navigation-link__leading-icon"
+            data-testid="navigation-link-leading-icon"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="m640-120-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-29 72-24 143t48 135H80Zm600-80q33 0 56.5-23.5T760-320q0-33-23.5-56.5T680-400q-33 0-56.5 23.5T600-320q0 33 23.5 56.5T680-240ZM400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Z"
+            />
+          </svg>
+          Manage users
+        </a>
+        <a
+          class="navigation-link navigation-link--accordion"
+          href="/users/deleted"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon navigation-link__leading-icon"
+            data-testid="navigation-link-leading-icon"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M791-55 686-160H160v-112q0-34 17.5-62.5T224-378q45-23 91.5-37t94.5-21L55-791l57-57 736 736-57 57Zm-55-323q29 14 46 42.5t18 61.5L666-408q18 7 35.5 14t34.5 16ZM568-506 346-728q23-34 58-53t76-19q66 0 113 47t47 113q0 41-19 76t-53 58Z"
+            />
+          </svg>
+          Deleted users
+        </a>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

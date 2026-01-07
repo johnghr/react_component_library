@@ -11,30 +11,35 @@ const testProps: IconProps = {
 
 describe('Icon component', () => {
     it('renders the correct icon based on the name prop', () => {
-        render(<Icon {...testProps} />);
+        render(<Icon {...testProps} data-testid="icon" />);
         const iconElement = screen.getByTestId('icon');
 
         expect(iconElement).not.toBe(null);
     });
 
     it('renders the icon with the correct default className', () => {
-        render(<Icon {...testProps} />);
+        render(<Icon {...testProps} data-testid="icon" />);
         const iconElement = screen.getByTestId('icon');
 
         expect(iconElement).toHaveClass('icon');
     });
 
     it('renders the icon with the correct block scoped className', () => {
-        render(<Icon {...testProps} className="block__icon" />);
+        render(<Icon {...testProps} className="block__icon" data-testid="icon" />);
         const iconElement = screen.getByTestId('icon');
 
         expect(iconElement).toHaveClass('icon block__icon');
     });
 
     it('renders the icon with the correct focusable attribute', () => {
-        render(<Icon {...testProps} />);
+        render(<Icon {...testProps} data-testid="icon" />);
         const iconElement = screen.getByTestId('icon');
 
         expect(iconElement).toHaveAttribute('focusable', 'false');
+    });
+
+    it('matches the snapshot', () => {
+        const { asFragment } = render(<Icon {...testProps} />);
+        expect(asFragment()).toMatchSnapshot();
     });
 });

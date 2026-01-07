@@ -1,0 +1,30 @@
+@import '../Drawer.scss';
+@import '../../../scss//state-layer.scss';
+@import '../../../scss/typography.scss';
+
+.navigation-link {
+    text-decoration: none;
+    box-sizing: border-box;
+    flex-shrink: 0;
+
+    &--accordion {
+        margin-left: 1rem;
+        width: calc(100% - 2rem);
+    }
+
+    @include accordion-trigger-and-link-container;
+    @include typescale-label-large;
+
+    &:hover {
+        @include hover-state($color-on-secondary-container);
+    }
+
+    &:active,
+    :focus {
+        @include focus-and-active-state($color-on-secondary-container);
+    }
+
+    &:focus-visible {
+        @include focus-indicator;
+    }
+}

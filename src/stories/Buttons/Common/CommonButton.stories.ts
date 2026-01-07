@@ -14,11 +14,11 @@ const meta = {
             control: { type: 'radio' }
         },
         iconLeft: {
-            options: iconKeys,
+            options: [undefined, ...iconKeys],
             control: { type: 'select' }
         },
         iconRight: {
-            options: iconKeys,
+            options: [undefined, ...iconKeys],
             control: { type: 'select' }
         },
         variant: {

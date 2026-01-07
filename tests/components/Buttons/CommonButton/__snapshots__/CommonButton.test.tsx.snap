@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button components Icon > matches the snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Click me"
+    class="button button common-button common-button--outlined"
+    type="button"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;

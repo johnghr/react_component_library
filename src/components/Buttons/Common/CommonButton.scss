@@ -1,20 +1,16 @@
 @import '../../../scss/color.scss';
 @import '../../../scss/elevation.scss';
-@import '../../../scss/typography.scss';
 @import '../../../scss/shape.scss';
 @import '../Button.scss';
 
 .common-button {
+    border-radius: $shape-corner-full;
     height: 2.5rem;
     padding: 0 1.5rem;
-    text-align: center;
-    font-family: $typescale-label-large-font;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: $typescale-label-large-size;
-    line-height: 1.6667rem;
-    font-weight: 500;
-    border-radius: $shape-corner-full;
+
+    &--full-width {
+        width: 100%;
+    }
 
     &--icon-left {
         padding-left: 1rem;
@@ -27,37 +23,52 @@
     &--elevated {
         box-shadow: $elevation-level-one;
         @include label-and-container-color($label-color: $color-primary, $container-color: $color-surface-container-low);
-        @include active-and-focus-enabled($color-primary);
-        @include focus-indicator;
-        @include hover-enabled($color-on-primary, $elevation-level-two);
+        &:active:enabled,
+        :focus:enabled {
+            @include focus-and-active-state($color-primary);
+        }
+        &:hover:enabled {
+            @include hover-state($color-on-primary, $elevation-level-two);
+        }
         &:disabled {
-            @include label-and-container-color($color-on-surface, $disabled-label-opacity, $color-on-surface, $disabled-container-opacity);
+            @include label-and-container-color(
+                $color-on-surface,
+                $state-layer-disabled-label-opacity,
+                $color-on-surface,
+                $state-layer-disabled-container-opacity
+            );
             box-shadow: none;
         }
     }
 
     &--filled {
         @include label-and-container-color($label-color: $color-on-primary, $container-color: $color-primary);
-        @include active-and-focus-enabled($color-on-primary);
-        @include focus-indicator;
-        @include hover-enabled($color-on-primary, $elevation-level-one);
+        @include focus-and-active-state($color-on-primary);
+        &:hover:enabled {
+            @include hover-state($color-on-primary, $elevation-level-one);
+        }
         @include tonal-and-filled-disabled;
     }
 
     &--outlined {
         outline: solid 1px $color-outline;
         @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
-        @include active-and-focus-enabled($color-primary);
-        @include focus-indicator;
-        @include hover-enabled($color-primary);
+        &:active:enabled,
+        :focus:enabled {
+            @include focus-and-active-state($color-primary);
+        }
+        &:hover:enabled {
+            @include hover-state($color-primary);
+        }
         @include outlined-disabled;
     }
 
     &--text {
         @include label-and-container-color($label-color: $color-primary, $container-color: rgb(0, 0, 0), $container-opacity: 0);
-        @include active-and-focus-enabled($color-on-secondary-container);
-        @include focus-indicator;
-        @include hover-enabled($color-on-secondary-container);
+        @include focus-and-active-state($color-on-secondary-container);
+        &:hover:enabled {
+            @include hover-state($color-on-secondary-container);
+        }
         &:disabled {
             color: $color-on-surface;
         }
@@ -65,21 +76,22 @@
 
     &--tonal {
         @include label-and-container-color($label-color: $color-on-secondary-container, $container-color: $color-secondary-container);
-        @include active-and-focus-enabled($color-on-secondary-container);
-        @include focus-indicator;
-        @include hover-enabled($color-on-secondary-container, $elevation-level-one);
+        @include focus-and-active-state($color-on-secondary-container);
+        &:hover:enabled {
+            @include hover-state($color-on-secondary-container, $elevation-level-one);
+        }
         @include tonal-and-filled-disabled;
     }
 
     &__icon {
         fill: currentColor;
-        height: 18px;
-        width: 18px;
+        height: 1.125rem;
+        width: 1.125rem;
         &--right {
-            margin-left: 8px;
+            margin-left: 0.5rem;
         }
         &--left {
-            margin-right: 8px;
+            margin-right: 0.5rem;
         }
     }
 }
